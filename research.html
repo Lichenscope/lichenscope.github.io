@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research | Elise Lebreton — LichenScope</title>
+<meta name="description" content="Research overview: foliicolous lichens, the family Gomphillaceae, phylogenetics, species delimitation, macroevolution and tropical fieldwork.">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+  /* ===== EN-TÊTE AVEC PHOTO DE LA FEUILLE ===== */
+  .page-head--with-image {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);  /* texte à gauche, photo à droite */
+    align-items: center;
+    gap: clamp(1.5rem, 4vw, 3.5rem);
+  }
+  .nowrap {
+    white-space: nowrap;   /* évite de couper le titre en "living-" / "leaves" */
+  }
+  .page-head-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 14px 18px rgba(30, 40, 20, 0.15));  /* légère ombre sous la feuille */
+  }
+  /* ===== STUDY SYSTEM : TEXTE À GAUCHE, FIGURE À DROITE ===== */
+  .split-with-figure {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(2rem, 5vw, 4rem);
+  }
+  .split-with-figure a.split-figure {
+    display: block;
+    border: 0;
+    text-decoration: none;
+  }
+  .split-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 3px;
+    box-shadow: 0 10px 30px rgba(30, 40, 20, 0.12), 0 2px 6px rgba(30, 40, 20, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .split-figure:hover img,
+  .split-figure:focus-visible img {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 36px rgba(30, 40, 20, 0.18), 0 3px 8px rgba(30, 40, 20, 0.1);
+  }
+
+  .split-text .study-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem 1rem;
+    padding-block-start: 0.4em;
+  }
+
+  /* Encadré orange "See also LichenScope" */
+  .split-text a.see-also-box {
+    display: inline-block;
+    padding: 0.55em 1.1em;
+    border: 1.5px solid #b8481e;
+    border-radius: 4px;
+    color: #b8481e;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .split-text a.see-also-box:hover,
+  .split-text a.see-also-box:focus-visible {
+    background: #b8481e;
+    color: #f3efde;
+  }
+
+  /* Sur téléphone et petite tablette : les images passent sous le texte */
+  @media (max-width: 860px) {
+    .page-head--with-image,
+    .split-with-figure {
+      grid-template-columns: 1fr;
+    }
+    .page-head-img {
+      max-width: 440px;
+      margin: 0 auto;
+    }
+    .split-with-figure a.split-figure {
+      max-width: 380px;
+      margin: 0 auto;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-row">
+    <a href="index.html" class="brand">
+      <span class="brand-text">Elise Lebreton<span class="brand-sub">PhD</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="research.html" class="active">Research</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="lichenscope.html">LichenScope</a></li>
+        <li><a href="services.html">Services &amp; Outreach</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="container page-head page-head--with-image">
+    <div class="page-head-text">
+      <p class="eyebrow">Research</p>
+      <h1>Life on <span class="nowrap">living-leaves</span></h1>
+      <p class="lede" style="max-width:680px">Foliicolous (leaf-dwelling) lichens represent an extreme ecological strategy. Confined to short-lived substrates, they experience temporal and spatial constraints that should, in theory, limit diversification. Yet, these lineages are remarkably diverse and widespread across the tropics.</p>
+    </div>
+    <img class="page-head-img" src="assets/img/feuille.png" width="1200" height="774" alt="A living leaf covered with foliicolous lichens">
+  </section>
+
+  <!-- THE QUESTION -->
+  <section class="section section--alt">
+    <div class="container question-block">
+      <p class="eyebrow">The question</p>
+      <span class="question-mark" aria-hidden="true">"</span>
+      <p class="question-statement">Using foliicolous lichens as a model, my research explores a broader question: how do organisms <span class="accent">diversify under strong ecological constraints?</span></p>
+      <div class="question-rule"></div>
+    </div>
+  </section>
+
+  <!-- STUDY SYSTEM -->
+  <section class="section">
+    <div class="container split-with-figure">
+      <div class="split-text">
+        <p class="eyebrow">Study system</p>
+        <h2>Gomphillaceae: a model for studying lichen evolution</h2>
+        <p>My PhD focused on the family <span class="taxon">Gomphillaceae</span> (Ascomycota, Graphidales), the most diverse and abundant groups of foliicolous lichens.</p>
+        <p>I reconstructed the first global, multilocus phylogeny of the family, providing a robust framework to investigate: (i) diversification dynamics and evolutionary tempo, (ii) historical biogeography and dispersal across tropical regions, (iii) the role of ecological and symbiotic traits in shaping lineage evolution.</p>
+        <p>Beyond Gomphillaceae, I contribute to lichen inventories in understudied regions, including parts of the Caribbean and the tropical Pacific. I also work on species description, taxonomic revisions, and classification across several groups of lichen-forming fungi.</p>
+        <p class="study-links">
+          <a href="publications.html" class="btn btn--solid">See publications →</a>
+          <a href="lichenscope.html" class="see-also-box">See also LichenScope →</a>
+        </p>
+      </div>
+      <a class="split-figure" href="https://doi.org/10.3897/imafungus.16.144194" title="Read the article in IMA Fungus">
+        <img src="assets/img/IMAF.png" width="900" height="1218" loading="lazy" alt="First page of Lebreton et al. (2025), IMA Fungus: global phylogeny of the family Gomphillaceae, with a world map of biogeographic regions and photographs of foliicolous lichens">
+      </a>
+    </div>
+  </section>
+
+  <!-- FUTURE RESEARCH DIRECTIONS -->
+<section class="section section--dark">
+  <div class="container" style="max-width:760px">
+    <h2>Future research directions</h2>
+    <p>
+      I would like to build on my work in lichen systematics and evolution
+      by exploring four areas.
+    </p>
+  <ul class="research-directions" style="margin-block: 1em;">
+      <li>
+        <strong>▸Comparative genomics</strong> to investigate how lichen
+        symbioses evolve.
+      </li>
+      <li>
+        <strong>▸Museomics</strong> to address taxonomic and evolutionary
+        questions using DNA from historical herbarium specimens.
+      </li>
+      <li>
+        <strong>▸Evolution of lichen chemistry</strong> to understand
+        how secondary metabolites have diversified across lichen lineages.
+      </li>
+      <li>
+        <strong>▸Community assembly</strong> to investigate how lichen
+        communities establish on living leaves in tropical forests.
+      </li>
+    </ul>
+<p>
+I'm currently seeking postdoctoral opportunities in these areas and welcome collaborations to develop new research projects.
+ </p>
+<a href="contact.html" class="btn"
+   style="background: transparent; color: inherit; border: 1px solid currentColor;">
+  Get in touch →
+</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <span>© 2026 Elise Lebreton — LichenScope</span>
+    <div class="footer-links">
+      <a href="https://orcid.org/0000-0002-4628-6521">ORCID</a>
+      <a href="https://www.researchgate.net/profile/Elise-Lebreton">ResearchGate</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

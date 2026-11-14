@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LichenScope | Elise Lebreton</title>
+<meta name="description" content="LichenScope — independent lichenology research practice founded by Elise Lebreton, PhD, conducting tropical biodiversity fieldwork, DNA barcoding and collection development across the Caribbean and French Guiana.">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+  .lichen-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-block-start: 1.5rem;
+  }
+
+  .lichen-gallery-grid figure {
+    min-width: 0;
+    margin: 0;
+  }
+
+  .lichen-gallery-grid img,
+  .lichen-gallery-grid video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+    background: rgba(30, 40, 20, 0.06);
+    border-radius: 4px;
+  }
+
+  .lichen-gallery-grid figcaption {
+    margin-top: 0.55rem;
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 900px) {
+    .lichen-gallery-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 680px) {
+    .lichen-gallery-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-row">
+    <a href="index.html" class="brand">
+      <span class="brand-text">Elise Lebreton<span class="brand-sub">PhD</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="lichenscope.html" class="active">LichenScope</a></li>
+        <li><a href="services.html">Services &amp; Outreach</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="container page-head">
+    <p class="eyebrow">LichenScope</p>
+    <h1>Independent research in lichenology</h1>
+    <p class="lede" style="max-width:680px">LichenScope is my independent research practice. It gives me the freedom to develop my own projects with partners both within and beyond academia.</p>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section section--alt">
+    <div class="container" style="max-width:760px">
+      <p class="eyebrow">About</p>
+      <p>I founded LichenScope in January 2026 to provide lichenological expertise in regions where it is scarce. I build on the fieldwork I began during my PhD through partnerships with universities, botanic gardens, natural history museums, botanical conservatories, national parks and other conservation organisations.</p>
+      <p>I produce validated datasets and species checklists for project partners and the wider scientific community. Where appropriate, I also publish the findings in peer-reviewed journals.</p>
+    </div>
+  </section>
+
+  <!-- WHAT I DO -->
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">What LichenScope does</p>
+      <h2>Services &amp; activities</h2>
+      <div class="grid grid--2" style="margin-top:2em">
+        <div class="card reveal">
+          <span class="num">01</span>
+          <h3>Field surveys</h3>
+          <p>I design and carry out lichen inventories, from developing sampling strategies and arranging permits to coordinating field logistics and collecting specimens.</p>
+        </div>
+        <div class="card reveal">
+          <span class="num">02</span>
+          <h3>Morphological &amp; molecular identification</h3>
+          <p>I combine morphological and anatomical examination with DNA barcoding (ITS, mtSSU and LSU) to identify lichens at species level.</p>
+        </div>
+        <div class="card reveal">
+          <span class="num">03</span>
+          <h3>Collection development &amp; curation</h3>
+          <p>I prepare and curate voucher specimens for deposition in herbaria. </p>
+        </div>
+        <div class="card reveal">
+          <span class="num">04</span>
+          <h3>Project design &amp; grant management</h3>
+          <p>I write funding proposals, develop budgets and coordinate externally funded projects, from single-site inventories to expeditions involving multiple partners.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section section--alt" aria-labelledby="lichen-gallery-title">
+    <div class="container">
+      <h2 id="lichen-gallery-title">From fieldwork to the lab</h2>
+
+      <div class="lichen-gallery-grid">
+        <figure>
+          <video controls playsinline preload="metadata"
+                 aria-label="Close-up of a lichen through a hand lens">
+            <source src="assets/video/lichen-hand-lens.mp4" type="video/mp4">
+            <a href="assets/video/lichen-hand-lens.mp4">View the hand-lens video</a>
+          </video>
+          <figcaption>Examining bark-dwelling lichens in the field with a hand lens.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="assets/img/lichen-gallery/specimen-packets.jpg"
+               alt="Elise Lebreton sorting labelled specimen packets spread across the floor" loading="lazy">
+          <figcaption>Sorting lichen specimens after fieldwork.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="assets/img/lichen-gallery/microscope-desk.jpg"
+               alt="Elise Lebreton looking through a stereomicroscope" loading="lazy">
+          <figcaption>Examining lichen specimens under a stereomicroscope.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="assets/img/lichen-gallery/lichen-sample-tube.jpg"
+               alt="A gloved hand holds a tube containing a lichen fragment beside the original specimen" loading="lazy">
+          <figcaption>Preparing a fragment of a lichen specimen for DNA extraction.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="assets/img/lichen-gallery/lichen-dna-extraction.jpg"
+               alt="A gloved hand holds a sample tube above racks of labelled tubes" loading="lazy">
+          <figcaption>DNA extraction from a lichen sample.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="assets/img/lichen-gallery/gel-electrophoresis.jpg"
+               alt="Fluorescent DNA bands and a size ladder on an electrophoresis gel" loading="lazy">
+          <figcaption>Visualising DNA fragments by gel electrophoresis.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- SELECTED PROJECTS -->
+  <section class="section section--dark">
+    <div class="container">
+      <p class="eyebrow">Selected projects</p>
+      <h2>Recent &amp; ongoing work</h2>
+      <div class="log" style="margin-top:2em">
+        <div class="log-entry reveal">
+          <span class="log-date">2026 –</span>
+          <div><span class="log-dot"></span>
+            <h4>Lichen inventory of Guadeloupe</h4>
+            <p>I lead a lichen inventory on Guadeloupe’s two main islands, Basse-Terre and Grande-Terre. The project includes compiling a species checklist and establishing the first dedicated lichen collection at the GUAD herbarium.
+Funded by the Guadeloupe Botanical Conservatory (CBNIG), ARBIG and DEAL.</p>
+          </div>
+        </div>
+        <div class="log-entry reveal">
+          <span class="log-date">2026</span>
+          <div><span class="log-dot"></span>
+            <h4>Saba Estafette Expedition — Critter Quest 2</h4>
+            <p>At the invitation of the founder of the Saba Estafette Expedition, I joined Critter Quest 2 on Saba (Dutch Caribbean) and co-led its lichen expedition. This checklist is conducted in collaboration with Naturalis Biodiversity Center and the Botanic Garden and Botanical Museum Berlin (BGBM), with funding from the Sea & Learn Foundation and the Hugo de Vries Fonds.</p>
+          </div>
+        </div>
+        <div class="log-entry reveal">
+          <span class="log-date">2027</span>
+          <div><span class="log-dot"></span>
+            <h4>Lichen inventory in French Guiana (upcoming)</h4>
+            <p>I will lead a three-week field expedition to the Réserve naturelle nationale de La Trinité to document lichen diversity and establish a baseline dataset for the reserve.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <span>© 2026 Elise Lebreton — LichenScope</span>
+    <div class="footer-links">
+      <a href="https://orcid.org/0000-0002-4628-6521">ORCID</a>
+      <a href="https://www.researchgate.net/profile/Elise-Lebreton">ResearchGate</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
