@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elise Lebreton — Lichenologist | LichenScope</title>
+<meta name="description" content="Elise Lebreton is a lichenologist studying how the leaf-dwelling lifestyle shapes evolution, diversification and biogeography in foliicolous lichens, with a focus on the family Gomphillaceae.">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+  /* ===== CARROUSEL DE LA BANNIÈRE ===== */
+  #banner-current {
+    transition: opacity 0.25s ease;   /* petit fondu entre les images */
+  }
+  .banner-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.35);
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  .banner-arrow:hover,
+  .banner-arrow:focus-visible {
+    background: rgba(0, 0, 0, 0.65);
+  }
+  .banner-arrow svg {
+    width: 22px;
+    height: 22px;
+  }
+  .banner-arrow--prev { left: 14px; }
+  .banner-arrow--next { right: 14px; }
+
+  .banner-dots {
+    position: absolute;
+    bottom: 12px;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    pointer-events: none;
+  }
+  .banner-dots span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+    transition: background 0.2s ease;
+  }
+  .banner-dots span.is-active {
+    background: #fff;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-row">
+    <a href="index.html" class="brand">
+      <span class="brand-text">Elise Lebreton<span class="brand-sub">PhD</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="lichenscope.html">LichenScope</a></li>
+        <li><a href="services.html">Services &amp; Outreach</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===== PROFILE BANNER (LinkedIn-style) ===== -->
+  <section class="profile-banner">
+    <div class="banner-img" id="banner-carousel">
+      <img id="banner-current" src="assets/img/banner-lichen-1.jpg" alt="Close-up of a foliicolous lichen community on a tropical leaf">
+      <button type="button" class="banner-arrow banner-arrow--prev" aria-label="Previous banner">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg>
+      </button>
+      <button type="button" class="banner-arrow banner-arrow--next" aria-label="Next banner">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+      <div class="banner-dots" aria-hidden="true"></div>
+    </div>
+    <div class="container profile-banner-inner">
+      <div class="profile-info">
+        <p class="eyebrow">Lichenologist · PhD</p>
+        <div class="profile-name-row">
+          <h1>Elise Lebreton, PhD</h1>
+          <div class="profile-avatar-sm">
+            <img src="assets/img/profile.jpg" alt="Portrait of Elise Lebreton">
+          </div>
+        </div>
+        <p class="role">Scientific Collaborator, University of Liège </p>
+        <p class="role">Founder &amp; Principal Investigator, LichenScope </p>
+        <div class="profile-actions">
+          <a href="research.html" class="btn btn--solid">View my research</a>
+          <a href="assets/cv/Elise-Lebreton-CV.pdf" class="btn">Download CV ↓</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BIO ===== -->
+  <section class="section section--alt">
+    <div class="container" style="max-width:760px">
+      <p class="eyebrow">About</p>
+      <p class="lede">Hi there! I'm Elise a biologist who uses lichen-forming fungi to explore questions in evolutionary biology, ecology, biogeography, and systematics. Lichens offer a powerful framework to study large-scale processes such as diversification dynamics, the evolution of symbiosis while also serving as sensitive indicators of air pollution and habitat disturbance.</p>
+      <div class="truncate-text" id="about-text">
+        <p>I first discovered lichenology by chance as an undergraduate. It became the focus of my research during the year I spent in Guadeloupe (Caribbean) as part of my master's degree. There, I was struck both by the extraordinary diversity of lichens and by how much there was still to learn about them. With few opportunities for formal training in lichenology in France, I taught myself the basics and developed my own research projects while studying at La Rochelle University, the University of Antilles, and the University of Montpellier. My early work at the Montpellier herbarium (MPU) sparked a lasting interest in collections-based research.</p>
+        <p>I later received support from the Muséum national d'Histoire naturelle (MNHN, Paris) and PatriNat, where my work at the P and PC herbaria played a key role in shaping my research trajectory. I also benefited from the support of the Association Française de Lichénologie (French Lichen Society), and from the generosity of lichenologists around the world who shared their expertise with me. Their example continues to shape how I collaborate and share what I lean.</p>
+        <p>I completed my PhD at the University of Liège, Belgium, in September 2025. My research combines taxonomy, molecular phylogenetics, and herbarium collections to study the evolution of lichen-forming fungi. I'm currently seeking a postdoctoral position or a permanent role as a faculty member or curator. I'm also interested in collaborations in evolutionary biology, biogeography, and collections-based research, including museomics.</p>
+        <p>In 2026, I obtained the French national qualifications to apply for <i>maître de conférences</i> [Associate Professor] at universities (MCF, CNU Section 68) and at the Muséum national d'Histoire naturelle (MCMU).</p>
+        <p>You can find out more about my work on the <a href="research.html">Research page</a>.</p>
+      </div>
+      <button type="button" class="text-toggle" data-target="about-text" aria-expanded="false">
+        <span class="text-toggle-label">See more</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- ===== AREAS OF EXPERTISE ===== -->
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Research at a glance</p>
+      <h2>Four complementary areas of expertise</h2>
+      <div class="grid grid--2" style="margin-top:2em">
+        <div class="card reveal">
+          <span class="num">01</span>
+          <h3>Evolutionary biology &amp; systematics</h3>
+          <p>Molecular phylogenetics, species delimitation, macroevolutionary analyses and historical biogeography, with a focus on leaf-dwelling (foliicolous) lichen-forming fungi.</p>
+        </div>
+        <div class="card reveal">
+          <span class="num">02</span>
+          <h3>Biodiversity surveys &amp; taxonomy</h3>
+          <p>Field inventories and taxonomic identification — morphological, chemical and molecular — combined with biomonitoring, in temperate and tropical ecosystems.</p>
+        </div>
+        <div class="card reveal">
+          <span class="num">03</span>
+          <h3>Herbarium research &amp; collection curation</h3>
+          <p>Taxonomic revision of historical collections, type material research, specimen databasing, georeferencing and digitisation across major European herbaria (PC, P, LG, BR, MPU).</p>
+        </div>
+        <div class="card reveal">
+          <span class="num">04</span>
+          <h3>Conservation &amp; biodiversity data</h3>
+          <p>Red List assessments, biodiversity knowledge synthesis and conservation-oriented projects, including the FEnTOM and MycoWeb initiatives.</p>
+        </div>
+      </div>
+
+      <div style="margin-top:2.4em; padding-top:2em; border-top:1px solid var(--line)">
+        <span class="eyebrow" style="margin-bottom:.6em">Field sites</span>
+        <div>
+          <span class="tag">Guadeloupe — 6 expeditions</span>
+          <span class="tag">New Caledonia</span>
+          <span class="tag">Saba, Dutch Caribbean</span>
+          <span class="tag">French Guiana — upcoming 2027</span>
+        </div>
+      </div>
+    </div>
+  </section>
+<iframe
+  id="expeditions-map"
+  title="Interactive map of field expeditions"
+  loading="lazy"
+  style="display: block; width: 100%; height: 520px; border: 0;">
+</iframe>
+<script>
+  const expeditionFrame = document.getElementById("expeditions-map");
+  const mapOrigin = location.protocol === "file:" ? "null" : location.origin;
+
+  window.addEventListener("message", (event) => {
+    if (event.source !== expeditionFrame.contentWindow || event.origin !== mapOrigin) return;
+
+    const { type, height } = event.data ?? {};
+    if (type === "expeditions-map:resize" && Number.isInteger(height) && height > 0) {
+      expeditionFrame.style.height = height + "px";
+    }
+  });
+
+  expeditionFrame.src = "expeditions-map.html";
+</script>
+
+  <!-- ===== DISTINCTIONS ===== -->
+  <section class="section section--alt">
+    <div class="container">
+      <p class="eyebrow">Distinctions</p>
+      <h2>Recognition</h2>
+      <div class="grid grid--2" style="margin-top:2em">
+        <div class="card reveal">
+          <span class="num">2026</span>
+          <h3>Mason Hale Award</h3>
+          <p>International Association for Lichenology (IAL). Awarded for outstanding doctoral research in lichenology, presented at major IAL meetings.</p>
+        </div>
+        <div class="card reveal">
+          <span class="num">2026</span>
+          <h3>Adjudant Hubert Lefebvre Prize</h3>
+          <p>Royal Academy of Belgium, Class of Sciences. Triennial European prize recognizing original research in botany.</p>
+        </div>
+      </div>
+      <p style="margin-top:2em; max-width:680px; color:var(--ink-soft)">Both awarded for the PhD thesis <em>Life on Leaves: Biogeography, Evolution and Photobiont Interactions in Gomphillaceae</em>.</p>
+      <p style="max-width:680px"><a href="https://orbi.uliege.be/handle/2268/334975">Read the thesis →</a></p>
+    </div>
+  </section>
+
+  <!-- ===== LATEST ===== -->
+  <section class="section section--dark">
+    <div class="container">
+      <p class="eyebrow">Latest</p>
+      <h2>Recent entries</h2>
+      <div class="log" style="margin-top:2em">
+        <div class="log-entry reveal">
+          <time class="log-date" datetime="2026-11">Nov 2026</time>
+          <div><span class="log-dot"></span>
+            <h4>French Guiana field expedition confirmed!</h4>
+            <p>I’ll be heading to French Guiana in April 2027 for a lichen inventory.</p>
+          </div>
+        </div>
+        <div class="log-entry reveal">
+          <time class="log-date" datetime="2026-08">Aug 2026</time>
+          <div><span class="log-dot"></span>
+            <h4>Mason Hale Award at IAL10</h4>
+            <p>I’m back from the 10th International Lichenological Symposium in Trieste, where I gave a talk. On 30 July, I received the prestigious Mason Hale Award from the International Association for Lichenology for my doctoral research.</p>
+          </div>
+        </div>
+        <div class="log-entry reveal">
+          <time class="log-date" datetime="2026-06-12">Jun 2026</time>
+          <div><span class="log-dot"></span>
+            <h4>Proposal to conserve the name Gomphillaceae published in TAXON</h4>
+            <p>With Robert Lücking — a nomenclatural landmark for the family.</p>
+          </div>
+        </div>
+        <div class="log-entry reveal">
+          <time class="log-date" datetime="2026-06-06">Jun 2026</time>
+          <div><span class="log-dot"></span>
+            <h4>Adjudant Hubert Lefebvre Prize</h4>
+            <p>The Royal Academy of Belgium awarded me the Adjudant Hubert Lefebvre Prize for my doctoral research.</p>
+          </div>
+        </div>
+        <div class="log-entry reveal">
+          <time class="log-date" datetime="2026-04">Apr 2026</time>
+          <div><span class="log-dot"></span>
+            <h4>Lichen inventory in Guadeloupe</h4>
+            <p>I wrapped up a field expedition for the Guadeloupe Botanical Conservatory (CBNIG). I’m back home after nearly three months in the tropics, and I’ll miss the sunshine!</p>
+          </div>
+        </div>
+        <div class="log-entry reveal">
+          <time class="log-date" datetime="2026-03">Mar 2026</time>
+          <div><span class="log-dot"></span>
+            <h4>Two French national qualifications</h4>
+            <p>I’m delighted to have obtained two French national qualifications to apply for <em lang="fr">maître de conférences</em> (Associate Professor) positions at universities (MCF, CNU Section 68) and at the Muséum national d’Histoire naturelle (MCMU).</p>
+          </div>
+        </div>
+        <div class="log-entry reveal">
+          <time class="log-date" datetime="2026-03">Mar 2026</time>
+          <div><span class="log-dot"></span>
+            <h4>Saba Estafette Expedition — Critter Quest 2</h4>
+            <p>I’ve just wrapped up the lichen survey I co-led on Saba (Dutch Caribbean), one of the smallest inhabited islands in the Antilles. We collected around 800 specimens! Just enough time to catch two inter-island flights before my next field expedition in Guadeloupe.</p>
+          </div>
+        </div>
+        <div class="log-entry reveal">
+          <time class="log-date" datetime="2025-09-01">Sep 2025</time>
+          <div><span class="log-dot"></span>
+            <h4>Successfully defended my PhD!</h4>
+            <p>I defended my thesis on 1 September at the University of Liège, Belgium.</p>
+          </div>
+        </div>
+        <div class="log-entry reveal">
+          <time class="log-date" datetime="2025-02-17">Feb 2025</time>
+          <div><span class="log-dot"></span>
+            <h4>Global phylogeny of Gomphillaceae published in <em>IMA Fungus</em></h4>
+            <p>A global view of the origin, diversification and endemism of foliicolous lineages in the family. <a href="https://doi.org/10.3897/imafungus.16.144194">Read the article ↗</a></p>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:2.4em">
+        <a href="cv.html" class="btn">Full CV &amp; timeline →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LATEST ON LINKEDIN ===== -->
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">LinkedIn</p>
+      <h2>Latest updates</h2>
+      <p class="lede" style="max-width:680px">Recent posts from my LinkedIn profile.</p>
+      <div class="grid grid--2" style="margin-top:2em">
+        <div class="linkedin-embed reveal">
+          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7496161082324008960?collapsed=1" height="627" width="504" frameborder="0" allowfullscreen="" title="Post intégré"></iframe>
+        </div>
+        <div class="linkedin-embed reveal">
+          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7491492275152228352?collapsed=1" height="627" width="504" frameborder="0" allowfullscreen="" title="Post intégré"></iframe>
+        </div>
+        <div class="linkedin-embed reveal">
+          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7477397819805581312?collapsed=1" height="627" width="504" frameborder="0" allowfullscreen="" title="Post intégré"></iframe>
+        </div>
+        <div class="linkedin-embed reveal">
+          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7470906912776224768?collapsed=1" height="627" width="504" frameborder="0" allowfullscreen="" title="Post intégré"></iframe>
+        </div>
+      </div>
+      <p style="margin-top:2em"><a href="https://www.linkedin.com/in/elise-lebreton-a52751171/">See more on LinkedIn →</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <span>© 2026 Elise Lebreton — LichenScope</span>
+    <div class="footer-links">
+      <a href="https://orcid.org/0000-0002-4628-6521">ORCID</a>
+      <a href="https://www.researchgate.net/profile/Elise-Lebreton">ResearchGate</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script>
+/* ===== CARROUSEL DE LA BANNIÈRE ===== */
+(function () {
+  // Liste des bannières, dans l'ordre d'affichage.
+  // Pour en ajouter, retirer ou renommer une : modifiez simplement cette liste.
+  // "alt" = description de l'image (lue par les lecteurs d'écran) : remplacez-la par une vraie description.
+  var BANNERS = [
+    { src: "assets/img/banner-lichen-1.jpg", alt: "Close-up of a foliicolous lichen community on a tropical leaf" },
+    { src: "assets/img/banner-lichen-2.jpg", alt: "Lichen close-up (banner 2)" },
+    { src: "assets/img/banner-lichen-3.jpg", alt: "Lichen close-up (banner 3)" },
+    { src: "assets/img/banner-lichen-4.jpg", alt: "Lichen close-up (banner 4)" },
+    { src: "assets/img/banner-lichen-5.jpg", alt: "Lichen close-up (banner 5)" },
+    { src: "assets/img/banner-lichen-6.jpg", alt: "Lichen close-up (banner 6)" }
+  ];
+
+  var carousel = document.getElementById("banner-carousel");
+  var img = document.getElementById("banner-current");
+  if (!carousel || !img) return;
+
+  // Les flèches se placent par rapport à la bannière
+  if (getComputedStyle(carousel).position === "static") {
+    carousel.style.position = "relative";
+  }
+
+  // Petits points en bas de la bannière
+  var dotsBox = carousel.querySelector(".banner-dots");
+  var dots = BANNERS.map(function () {
+    var d = document.createElement("span");
+    dotsBox.appendChild(d);
+    return d;
+  });
+
+  var current = 0;
+
+  function show(index) {
+    // Tourniquet : après la dernière on revient à la première, et inversement
+    current = (index + BANNERS.length) % BANNERS.length;
+    img.style.opacity = 0;
+    setTimeout(function () {
+      img.src = BANNERS[current].src;
+      img.alt = BANNERS[current].alt;
+    }, 250);
+    dots.forEach(function (d, i) {
+      d.classList.toggle("is-active", i === current);
+    });
+  }
+
+  // Réaffiche l'image une fois chargée (ou si elle est introuvable)
+  img.addEventListener("load", function () { img.style.opacity = 1; });
+  img.addEventListener("error", function () { img.style.opacity = 1; });
+
+  // Clic sur les flèches
+  carousel.querySelector(".banner-arrow--prev").addEventListener("click", function () { show(current - 1); });
+  carousel.querySelector(".banner-arrow--next").addEventListener("click", function () { show(current + 1); });
+
+  // Sur téléphone : glisser le doigt vers la gauche ou la droite
+  var startX = null;
+  carousel.addEventListener("touchstart", function (e) {
+    startX = e.touches[0].clientX;
+  }, { passive: true });
+  carousel.addEventListener("touchend", function (e) {
+    if (startX === null) return;
+    var dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) show(current + (dx < 0 ? 1 : -1));
+    startX = null;
+  });
+
+  // Une fois la page chargée, précharge les autres bannières pour un changement instantané
+  window.addEventListener("load", function () {
+    BANNERS.forEach(function (b) { new Image().src = b.src; });
+  });
+
+  dots[0].classList.add("is-active");
+})();
+</script>
+</body>
+</html>
