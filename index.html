@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Elise Lebreton — Lichenologist | LichenScope</title>
 <meta name="description" content="Elise Lebreton is a lichenologist studying how the leaf-dwelling lifestyle shapes evolution, diversification and biogeography in foliicolous lichens, with a focus on the family Gomphillaceae.">
-<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/img/favicon-lichenscope.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -66,6 +66,423 @@
   .banner-dots span.is-active {
     background: #fff;
   }
+
+  .recognition-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(2rem, 6vw, 5rem);
+  }
+  .recognition-awards {
+    display: grid;
+    gap: 1rem;
+    margin-top: 2em;
+  }
+  .recognition-award {
+    display: block;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .recognition-award:hover {
+    color: var(--ink);
+    border-color: var(--accent);
+    box-shadow: 0 4px 14px rgba(30, 40, 20, 0.08);
+  }
+  .recognition-award:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+  }
+  .recognition-thesis-cover {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    justify-self: center;
+    border-radius: 4px;
+    box-shadow: 0 10px 28px rgba(30, 40, 20, 0.16);
+  }
+  .recognition-thesis-cover:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 5px;
+  }
+  .recognition-thesis-cover img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: inherit;
+  }
+  @media (max-width: 760px) {
+    .recognition-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Keep the portrait beside the full introduction without stretching the name row. */
+  .profile-info {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: clamp(1.5rem, 4vw, 3.5rem);
+    align-items: start;
+  }
+  .profile-info > .eyebrow { grid-column: 1; margin-bottom: 0.6rem; }
+  .profile-name-row { display: contents; }
+  .profile-name-row h1 { grid-column: 1; margin: 0 0 0.8rem; }
+  .profile-name-row .profile-avatar-sm {
+    grid-column: 2;
+    grid-row: 1 / span 5;
+    align-self: center;
+  }
+  .profile-info .role { grid-column: 1; margin: 0 0 0.35rem; }
+  .profile-info .role + .role { margin-top: 0; margin-bottom: 1.1rem; }
+  .profile-actions { grid-column: 1; }
+  @media (max-width: 700px) {
+    .profile-info { grid-template-columns: minmax(0, 1fr); }
+    .profile-name-row .profile-avatar-sm {
+      grid-column: 1;
+      grid-row: auto;
+      margin: 0.2rem 0 1rem;
+    }
+  }
+
+  /* ===== ILLUSTRATED AREAS OF EXPERTISE ===== */
+  .expertise-overview { padding-bottom: 0; }
+  .expertise-overview .expertise-title {
+    font-size: clamp(1.8rem, 3.1vw, 2.55rem);
+    letter-spacing: -0.015em;
+  }
+  .expertise-intro { margin-bottom: 0; }
+  .expertise-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin-top: clamp(1.25rem, 2.5vw, 1.75rem);
+  }
+  /* Decorative line, painted before the illustrations. */
+  .expertise-wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 270px;
+    overflow: hidden;
+    color: #a18a4c;
+    opacity: 0.78;
+    pointer-events: none;
+  }
+  .expertise-wave path {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.15;
+    stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
+  }
+  .expertise-panel {
+    position: relative;
+    display: grid;
+    grid-template-rows: 270px 1fr;
+    align-content: start;
+    min-width: 0;
+    padding: 0 1.1rem;
+  }
+  .expertise-panel + .expertise-panel {
+    border-left: 1px solid transparent;
+  }
+  .expertise-copy { position: relative; margin-top: 1.4rem; }
+  .expertise-panel + .expertise-panel .expertise-copy::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(-1.1rem - 1px);
+    border-left: 1px solid var(--line, rgba(22, 32, 26, 0.13));
+    pointer-events: none;
+  }
+  .expertise-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    height: 270px;
+    margin: 0 0 1.4rem;
+  }
+  .expertise-visual img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+  }
+  .expertise-panel h3 {
+    min-height: 2.4em;
+    margin: 0 0 0.65rem;
+    font-size: clamp(1.2rem, 1.65vw, 1.4rem);
+    line-height: 1.2;
+  }
+  .expertise-panel p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+  .expertise-transversal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    margin: 2.5rem 0 0;
+    color: var(--ink-soft, #4c5750);
+    font-size: 1rem;
+    font-style: italic;
+    line-height: 1.6;
+    text-align: center;
+  }
+  .expertise-transversal::before,
+  .expertise-transversal::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--line, rgba(22, 32, 26, 0.13));
+  }
+  @media (min-width: 1200px) {
+    .expertise-wave { height: 300px; }
+    .expertise-panel { grid-template-rows: 300px 1fr; }
+    .expertise-visual { height: 300px; }
+  }
+  @media (max-width: 1000px) {
+    .expertise-wave { display: none; }
+    .expertise-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      row-gap: 2.25rem;
+    }
+    .expertise-panel:nth-of-type(3) { border-left: 0; }
+    .expertise-panel:nth-of-type(3) .expertise-copy::before { display: none; }
+    .expertise-panel:nth-of-type(n + 3) {
+      padding-top: 2rem;
+      border-top: 1px solid var(--line, rgba(22, 32, 26, 0.13));
+    }
+  }
+  @media (max-width: 580px) {
+    .expertise-grid { grid-template-columns: minmax(0, 1fr); row-gap: 0; }
+    .expertise-panel {
+      grid-template-rows: 250px auto;
+      padding: 0 0 2rem;
+    }
+    .expertise-panel + .expertise-panel {
+      padding: 2rem 0;
+      border-left: 0;
+      border-top: 1px solid var(--line, rgba(22, 32, 26, 0.13));
+    }
+    .expertise-panel + .expertise-panel .expertise-copy::before { display: none; }
+    .expertise-visual { height: 250px; }
+    .expertise-visual img { max-width: 340px; }
+    .expertise-panel h3 { min-height: 0; font-size: 1.45rem; }
+    .expertise-transversal { margin-top: 0.5rem; gap: 0.65rem; }
+    .expertise-transversal span { max-width: 28ch; }
+  }
+
+  /* ===== RECENT ENTRIES: READ MORE, AS IN ABOUT ===== */
+  .recent-entries-extra {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s ease;
+  }
+  .recent-entries-extra.is-expanded { grid-template-rows: 1fr; }
+  .recent-entries-inner { min-height: 0; overflow: hidden; }
+  .recent-entries-more { margin-top: 1.5rem; }
+  .recent-entries-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: none;
+    border: 0;
+    padding: 1em 0 0;
+    cursor: pointer;
+  }
+  .recent-entries-toggle:hover { color: var(--accent-soft); }
+  .recent-entries-toggle:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+  .recent-entries-toggle svg { width: 12px; height: 12px; transition: transform 0.3s ease; }
+  .recent-entries-toggle.is-expanded svg { transform: rotate(180deg); }
+  @media (prefers-reduced-motion: reduce) {
+    .recent-entries-extra, .recent-entries-toggle svg { transition: none; }
+  }
+
+  /* ===== HOME: A RESEARCH OVERVIEW WITH PHOTOGRAPHS ===== */
+  .profile-summary {
+    grid-column: 1;
+    max-width: 58ch;
+    margin: 0 0 1.1rem;
+    color: var(--ink-soft);
+    font-size: 1.08rem;
+    line-height: 1.6;
+  }
+  .profile-name-row .profile-avatar-sm { grid-row: 1 / span 6; }
+  .about-section { padding: 72px 0; }
+  .about-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: clamp(2rem, 4vw, 3.5rem);
+    align-items: start;
+  }
+  .about-copy h2 { margin-bottom: 1rem; }
+  .about-copy .lede { line-height: 1.65; }
+  .about-details {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows .5s ease;
+  }
+  .about-details.is-expanded { grid-template-rows: 1fr; }
+  .about-details-inner { min-height: 0; overflow: hidden; }
+  .about-details-inner p:first-child { margin-top: .3rem; }
+  .about-readmore {
+    display: inline-flex;
+    align-items: center;
+    gap: .4em;
+    font-family: var(--mono);
+    font-size: .82rem;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: var(--accent-deep);
+    background: none;
+    border: 0;
+    padding: .5rem 0;
+    cursor: pointer;
+  }
+  .about-readmore:hover { color: var(--accent); }
+  .about-readmore svg { width: 12px; height: 12px; transition: transform .3s ease; }
+  .about-readmore.is-expanded svg { transform: rotate(180deg); }
+  .about-gallery { min-width: 0; padding-top: 2rem; }
+  .about-gallery-stage { position: relative; }
+  .about-slide { margin: 0; }
+  .about-slide[hidden] { display: none; }
+  .about-photo-frame {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 4px;
+    background: var(--paper);
+  }
+  .about-photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: var(--photo-position, 50% 50%);
+  }
+  .about-slide figcaption {
+    min-height: 3.1rem;
+    padding: .75rem 0 .35rem;
+    color: var(--ink-soft);
+    font-size: .9rem;
+    line-height: 1.45;
+  }
+  .about-gallery-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem;
+    border-top: 1px solid var(--line);
+    padding-top: .35rem;
+  }
+  .about-gallery-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--forest);
+    cursor: pointer;
+  }
+  .about-gallery-arrow:hover { border-color: var(--accent); color: var(--accent-deep); }
+  .about-gallery-arrow svg { width: 18px; height: 18px; }
+  .about-gallery-dots { display: flex; align-items: center; justify-content: center; }
+  .about-gallery-dot {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+  }
+  .about-gallery-dot::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border: 1px solid var(--forest-light);
+    border-radius: 50%;
+  }
+  .about-gallery-dot[aria-current="true"]::before { background: var(--accent); border-color: var(--accent); }
+  .about-gallery-dot:hover::before { border-color: var(--accent); }
+  .about-gallery-count { color: var(--ink-soft); font-family: var(--mono); font-size: .8rem; white-space: nowrap; }
+  .expertise-panel { color: var(--ink); }
+  .social-update { padding: 48px 0; }
+  .social-update-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+  .social-update h2 { font-size: clamp(1.5rem, 2.5vw, 1.8rem); }
+  .social-update p:last-child { margin-bottom: 0; }
+  .social-update .btn { flex-shrink: 0; }
+  @media (max-width: 760px) {
+    .about-layout { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+    .about-gallery { padding-top: 0; max-width: 580px; width: 100%; }
+    .about-section { padding: 56px 0; }
+    .social-update-inner { align-items: flex-start; flex-direction: column; gap: 1.25rem; }
+  }
+  @media (max-width: 700px) {
+    .profile-name-row .profile-avatar-sm { grid-row: auto; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .about-details, .about-readmore svg { transition: none; }
+  }
+  /* ===== ABOUT: VISIBLE LINKS BELOW THE DISCLOSURE ===== */
+  .about-copy .about-explore {
+    margin: 4rem 0 0;
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: normal;
+  }
+  .about-copy .about-explore a {
+    font-style: normal;
+    color: var(--accent-deep, #c34c22);
+    text-transform: none;
+    letter-spacing: normal;
+    text-decoration: underline;
+    text-underline-offset: .2em;
+  }
+  .about-copy .about-explore a:hover { color: var(--accent, #e65c25); }
+  .about-copy .about-explore a:focus-visible {
+    outline: 2px solid var(--accent, #e65c25);
+    outline-offset: 4px;
+  }
+  @media (max-width: 760px) {
+    .about-copy .about-explore { margin-top: 2rem; }
+  }
+  /* ===== DIRECT LINK TO PUBLICATIONS ===== */
+  .expertise-publications {
+    margin: 1.2rem 0 0;
+    text-align: center;
+  }
+  .expertise-publications a {
+    display: inline-block;
+    padding: .25rem 0;
+    color: var(--accent-deep, #c34c22);
+    font-size: 1rem;
+    font-style: normal;
+    text-transform: none;
+    text-decoration: underline;
+    text-underline-offset: .2em;
+  }
+  .expertise-publications a:hover { color: var(--accent, #e65c25); }
+  .expertise-publications a:focus-visible {
+    outline: 2px solid var(--accent, #e65c25);
+    outline-offset: 4px;
+  }
 </style>
 </head>
 <body>
@@ -82,7 +499,6 @@
       <ul>
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="research.html">Research</a></li>
-        <li><a href="publications.html">Publications</a></li>
         <li><a href="lichenscope.html">LichenScope</a></li>
         <li><a href="services.html">Services &amp; Outreach</a></li>
         <li><a href="cv.html">CV</a></li>
@@ -108,15 +524,16 @@
     </div>
     <div class="container profile-banner-inner">
       <div class="profile-info">
-        <p class="eyebrow">Lichenologist · PhD</p>
+        <p class="eyebrow">Lichenologist</p>
         <div class="profile-name-row">
           <h1>Elise Lebreton, PhD</h1>
           <div class="profile-avatar-sm">
             <img src="assets/img/profile.jpg" alt="Portrait of Elise Lebreton">
           </div>
         </div>
-        <p class="role">Scientific Collaborator, University of Liège </p>
-        <p class="role">Founder &amp; Principal Investigator, LichenScope </p>
+   <p class="role">Scientific Collaborator, University of Liège, Belgium </p>
+        <p class="role">Founder &amp; Principal Investigator, LichenScope, France </p>
+ <p </p>
         <div class="profile-actions">
           <a href="research.html" class="btn btn--solid">View my research</a>
           <a href="assets/cv/Elise-Lebreton-CV.pdf" class="btn">Download CV ↓</a>
@@ -125,52 +542,148 @@
     </div>
   </section>
 
-  <!-- ===== BIO ===== -->
-  <section class="section section--alt">
-    <div class="container" style="max-width:760px">
-      <p class="eyebrow">About</p>
-      <p class="lede">Hi there! I'm Elise a biologist who uses lichen-forming fungi to explore questions in evolutionary biology, ecology, biogeography, and systematics. Lichens offer a powerful framework to study large-scale processes such as diversification dynamics, the evolution of symbiosis while also serving as sensitive indicators of air pollution and habitat disturbance.</p>
-      <div class="truncate-text" id="about-text">
+  <!-- ===== BIO AND RESEARCH PHOTOGRAPHS ===== -->
+  <section class="section section--alt about-section" aria-labelledby="about-title">
+    <div class="container about-layout">
+      <div class="about-copy">
+        <p class="eyebrow">About</p>
+        <h2 id="about-title">Exploring lichen diversity</h2>
+        <p class="lede">I'm a lichenologist and evolutionary biologist interested in the processes shaping the diversification and global distribution of lichen-forming fungi. I combine tropical fieldwork, integrative taxonomy, molecular phylogenetics and research on natural history collections to investigate these processes.</p>
+        <p>My work also contributes to species inventories, curated biodiversity datasets and environmental biomonitoring.</p>
+
+        <div class="about-details" id="about-text" aria-hidden="true" inert>
+          <div class="about-details-inner">
         <p>I first discovered lichenology by chance as an undergraduate. It became the focus of my research during the year I spent in Guadeloupe (Caribbean) as part of my master's degree. There, I was struck both by the extraordinary diversity of lichens and by how much there was still to learn about them. With few opportunities for formal training in lichenology in France, I taught myself the basics and developed my own research projects while studying at La Rochelle University, the University of Antilles, and the University of Montpellier. My early work at the Montpellier herbarium (MPU) sparked a lasting interest in collections-based research.</p>
-        <p>I later received support from the Muséum national d'Histoire naturelle (MNHN, Paris) and PatriNat, where my work at the P and PC herbaria played a key role in shaping my research trajectory. I also benefited from the support of the Association Française de Lichénologie (French Lichen Society), and from the generosity of lichenologists around the world who shared their expertise with me. Their example continues to shape how I collaborate and share what I lean.</p>
-        <p>I completed my PhD at the University of Liège, Belgium, in September 2025. My research combines taxonomy, molecular phylogenetics, and herbarium collections to study the evolution of lichen-forming fungi. I'm currently seeking a postdoctoral position or a permanent role as a faculty member or curator. I'm also interested in collaborations in evolutionary biology, biogeography, and collections-based research, including museomics.</p>
+        <p>I later received support from the Muséum national d'Histoire naturelle (MNHN, Paris) and PatriNat, where my work at the P and PC herbaria played a key role in shaping my research trajectory. I also benefited from the support of the Association Française de Lichénologie (French Lichen Society), and from the generosity of lichenologists around the world who shared their expertise with me. Their example continues to shape how I collaborate and share what I learn.</p>
+        <p>I completed my PhD at the University of Liège (Belgium) in September 2025 under the supervision of Prof. Nicolas Magain (<a href="https://bec-lab.github.io/" target="_blank" rel="noopener noreferrer">BEC lab</a>). My research combines taxonomy, molecular phylogenetics, and herbarium collections to study the evolution of lichen-forming fungi. I'm currently seeking a postdoctoral position or a permanent role as a faculty member or curator. I'm also interested in collaborations in evolutionary biology, biogeography, and collections-based research, including museomics.</p>
         <p>In 2026, I obtained the French national qualifications to apply for <i>maître de conférences</i> [Associate Professor] at universities (MCF, CNU Section 68) and at the Muséum national d'Histoire naturelle (MCMU).</p>
-        <p>You can find out more about my work on the <a href="research.html">Research page</a>.</p>
+          </div>
+        </div>
+        <button type="button" class="about-readmore" id="about-readmore" aria-expanded="false" aria-controls="about-text">
+          <span>See more</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+     <p class="about-explore">
+ See my <a href="cv.html">education and academic experience</a>.
+</p>
+        </p>
       </div>
-      <button type="button" class="text-toggle" data-target="about-text" aria-expanded="false">
-        <span class="text-toggle-label">See more</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-      </button>
+      <div class="about-gallery" id="about-gallery" role="region" aria-roledescription="carousel" aria-label="Research in pictures">
+        <div class="about-gallery-stage" id="about-gallery-stage">
+          <figure class="about-slide" id="about-photo-1" role="group" aria-roledescription="slide" aria-label="1 of 6">
+            <div class="about-photo-frame">
+              <img src="assets/img/about-fieldwork.webp" width="1084" height="1440" loading="lazy" decoding="async" style="--photo-position:50% 43%" alt="Elise Lebreton examining and collecting lichens on a tree trunk">
+            </div>
+            <figcaption>Collecting lichens in the field</figcaption>
+          </figure>
+          <figure class="about-slide" id="about-photo-2" role="group" aria-roledescription="slide" aria-label="2 of 6" hidden>
+            <div class="about-photo-frame">
+              <img src="assets/img/about-new-caledonia.webp" width="1440" height="1080" loading="lazy" decoding="async" style="--photo-position:50% 50%" alt="Elise Lebreton using a hand lens on a rocky hillside overlooking the sea in New Caledonia">
+            </div>
+            <figcaption>Field observations in New Caledonia</figcaption>
+          </figure>
+          <figure class="about-slide" id="about-photo-3" role="group" aria-roledescription="slide" aria-label="3 of 6" hidden>
+            <div class="about-photo-frame">
+              <img src="assets/img/about-collections.webp" width="1440" height="1084" loading="lazy" decoding="async" style="--photo-position:50% 50%" alt="Elise Lebreton documenting lichen collections beside rows of specimen packets">
+            </div>
+            <figcaption>Sorting and documenting field collections</figcaption>
+          </figure>
+          <figure class="about-slide" id="about-photo-4" role="group" aria-roledescription="slide" aria-label="4 of 6" hidden>
+            <div class="about-photo-frame">
+              <img src="assets/img/about-microscopy.webp" width="1440" height="805" loading="lazy" decoding="async" style="--photo-position:62% 50%" alt="Elise Lebreton studying lichens under a microscope beside a specimen image on a monitor">
+            </div>
+            <figcaption>Examining lichen morphology</figcaption>
+          </figure>
+          <figure class="about-slide" id="about-photo-5" role="group" aria-roledescription="slide" aria-label="5 of 6" hidden>
+            <div class="about-photo-frame">
+              <img src="assets/img/about-laboratory.webp" width="1440" height="807" loading="lazy" decoding="async" style="--photo-position:46% 50%" alt="Elise Lebreton working with a micropipette in the laboratory">
+            </div>
+            <figcaption>Molecular work in the laboratory</figcaption>
+          </figure>
+          <figure class="about-slide" id="about-photo-6" role="group" aria-roledescription="slide" aria-label="6 of 6" hidden>
+            <div class="about-photo-frame">
+              <img src="assets/img/about-sharing-research.webp" width="963" height="1440" loading="lazy" decoding="async" style="--photo-position:50% 72%" alt="Elise Lebreton presenting research on Gomphillaceae to an audience">
+            </div>
+            <figcaption>Sharing research on lichen diversity</figcaption>
+          </figure>
+        </div>
+        <div class="about-gallery-controls">
+          <button type="button" class="about-gallery-arrow" data-gallery-direction="-1" aria-label="Previous research photo" aria-controls="about-gallery-stage">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+          </button>
+          <div class="about-gallery-dots" role="group" aria-label="Choose a research photo">
+            <button type="button" class="about-gallery-dot" aria-label="Show photo 1: Collecting lichens in the field" aria-controls="about-photo-1" aria-current="true"></button>
+            <button type="button" class="about-gallery-dot" aria-label="Show photo 2: Field observations in New Caledonia" aria-controls="about-photo-2" aria-current="false"></button>
+            <button type="button" class="about-gallery-dot" aria-label="Show photo 3: Sorting and documenting field collections" aria-controls="about-photo-3" aria-current="false"></button>
+            <button type="button" class="about-gallery-dot" aria-label="Show photo 4: Examining lichen morphology" aria-controls="about-photo-4" aria-current="false"></button>
+            <button type="button" class="about-gallery-dot" aria-label="Show photo 5: Molecular work in the laboratory" aria-controls="about-photo-5" aria-current="false"></button>
+            <button type="button" class="about-gallery-dot" aria-label="Show photo 6: Sharing research on lichen diversity" aria-controls="about-photo-6" aria-current="false"></button>
+          </div>
+          <span class="about-gallery-count" aria-live="polite" aria-atomic="true">1 / 6</span>
+          <button type="button" class="about-gallery-arrow" data-gallery-direction="1" aria-label="Next research photo" aria-controls="about-gallery-stage">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- ===== AREAS OF EXPERTISE ===== -->
-  <section class="section">
+  <section class="section expertise-overview" aria-labelledby="expertise-title">
     <div class="container">
-      <p class="eyebrow">Research at a glance</p>
-      <h2>Four complementary areas of expertise</h2>
-      <div class="grid grid--2" style="margin-top:2em">
-        <div class="card reveal">
-          <span class="num">01</span>
-          <h3>Evolutionary biology &amp; systematics</h3>
-          <p>Molecular phylogenetics, species delimitation, macroevolutionary analyses and historical biogeography, with a focus on leaf-dwelling (foliicolous) lichen-forming fungi.</p>
-        </div>
-        <div class="card reveal">
-          <span class="num">02</span>
-          <h3>Biodiversity surveys &amp; taxonomy</h3>
-          <p>Field inventories and taxonomic identification — morphological, chemical and molecular — combined with biomonitoring, in temperate and tropical ecosystems.</p>
-        </div>
-        <div class="card reveal">
-          <span class="num">03</span>
-          <h3>Herbarium research &amp; collection curation</h3>
-          <p>Taxonomic revision of historical collections, type material research, specimen databasing, georeferencing and digitisation across major European herbaria (PC, P, LG, BR, MPU).</p>
-        </div>
-        <div class="card reveal">
-          <span class="num">04</span>
-          <h3>Conservation &amp; biodiversity data</h3>
-          <p>Red List assessments, biodiversity knowledge synthesis and conservation-oriented projects, including the FEnTOM and MycoWeb initiatives.</p>
-        </div>
+      <p class="eyebrow">Research & Expertise</p>
+      <h2 id="expertise-title" class="expertise-title">Understanding lichen diversity across scales</h2>
+      <p class="lede expertise-intro">From field inventories and herbarium collections to evolutionary research, conservation and bioindication</p>
+      <div class="expertise-grid">
+        <svg class="expertise-wave" viewBox="0 0 1200 300" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+          <!-- Separate strokes keep the line clear of the illustrations. -->
+          <path d="M -24.000 160.000 C 20.000 145.000 42.000 92.000 95.000 92.000 C 116.052 92.000 130.249 105.435 142.000 125.233"/>
+          <path d="M 175.000 198.166 C 195.204 243.426 221.911 286.000 280.000 286.000 C 322.213 286.000 353.408 264.134 380.000 233.133"/>
+          <path d="M 506.000 59.447 C 527.950 40.265 553.385 28.000 585.000 28.000 C 621.651 28.000 648.143 44.484 670.000 69.118"/>
+          <path d="M 774.000 231.378 C 800.851 263.305 834.877 286.000 885.000 286.000 C 913.816 286.000 939.806 274.636 965.000 258.389"/>
+          <path d="M 1177.000 146.368 C 1191.800 146.909 1207.413 149.614 1224.000 155.000"/>
+        </svg>
+        <article class="expertise-panel" aria-labelledby="expertise-panel-title-1">
+          <div class="expertise-visual">
+            <img src="assets/img/expertise-fieldwork.png" width="850" height="1199" loading="lazy" decoding="async" alt="Illustration of a lichen-covered branch and a field hand lens">
+          </div>
+          <div class="expertise-copy">
+  <h3 id="expertise-panel-title-1">Fieldwork</h3>
+            <p>Lichen inventories in tropical and temperate ecosystems.</p>
+          </div>
+        </article>
+        <article class="expertise-panel" aria-labelledby="expertise-panel-title-2">
+          <div class="expertise-visual">
+            <img src="assets/img/expertise-taxonomy-collections.png" width="1342" height="1041" loading="lazy" decoding="async" alt="Illustration of a herbarium specimen packet, a stereomicroscope and a yellow lichen">
+          </div>
+          <div class="expertise-copy">
+  <h3 id="expertise-panel-title-2">Taxonomy &amp; collections</h3>
+            <p>Species identification, historical specimens, collection curation.</p>
+          </div>
+        </article>
+        <article class="expertise-panel" aria-labelledby="expertise-panel-title-3">
+          <div class="expertise-visual">
+            <img src="assets/img/expertise-evolution-biogeography.png" width="1246" height="920" loading="lazy" decoding="async" alt="Illustration of a branching phylogeny with four lichens beside a globe">
+          </div>
+          <div class="expertise-copy">
+  <h3 id="expertise-panel-title-3">Evolution &amp; biogeography</h3>
+            <p>Molecular phylogenetics, diversification analyses (including trait- models) and ancestral area reconstruction.</p>
+          </div>
+        </article>
+        <article class="expertise-panel" aria-labelledby="expertise-panel-title-4">
+          <div class="expertise-visual">
+            <img src="assets/img/expertise-biodiversity-bioindication.png" width="1234" height="1285" loading="lazy" decoding="async" alt="Illustration of a species distribution map, a data sheet and a lichen sampling quadrat on a tree trunk">
+          </div>
+          <div class="expertise-copy">
+  <h3 id="expertise-panel-title-4">Biodiversity</h3>
+            <p>Datasets, species checklists, environmental biomonitoring, conservation pre-assessments (RedList).</p>
+          </div>
+        </article>
       </div>
+      <p class="expertise-transversal"><span>Project development &middot; Grant writing &middot; Teaching &amp; outreach</span></p>
+      <p class="expertise-publications">
+        <a href="research.html#publications">See my publications</a>
+      </p>
 
       <div style="margin-top:2.4em; padding-top:2em; border-top:1px solid var(--line)">
         <span class="eyebrow" style="margin-bottom:.6em">Field sites</span>
@@ -208,122 +721,133 @@
   <!-- ===== DISTINCTIONS ===== -->
   <section class="section section--alt">
     <div class="container">
-      <p class="eyebrow">Distinctions</p>
-      <h2>Recognition</h2>
-      <div class="grid grid--2" style="margin-top:2em">
-        <div class="card reveal">
-          <span class="num">2026</span>
-          <h3>Mason Hale Award</h3>
-          <p>International Association for Lichenology (IAL). Awarded for outstanding doctoral research in lichenology, presented at major IAL meetings.</p>
+      <div class="recognition-layout">
+        <div>
+          <p class="eyebrow">Distinctions</p>
+          <h2>Recognition</h2>
+          <div class="recognition-awards">
+            <a class="card reveal recognition-award" href="https://ial-lichenology.org/awards/" aria-labelledby="mason-hale-award-title">
+              <span class="num">2026</span>
+              <h3 id="mason-hale-award-title">Mason Hale Award — <em>International Association for Lichenology (IAL)</em></h3>
+              <p>Awarded for outstanding doctoral research in lichenology, presented at major IAL meetings.</p>
+            </a>
+            <a class="card reveal recognition-award" href="https://academieroyale.be/fr/chaires-concours-prix-subventions-prix-classe-sciences-detail/objets-candidature/prix-de-l-adjudant-hubert-lefebvre-2025/" aria-labelledby="hubert-lefebvre-award-title">
+              <span class="num">2026</span>
+              <h3 id="hubert-lefebvre-award-title">Adjudant Hubert Lefebvre Prize — <em>Royal Academy of Belgium, Class of Sciences</em></h3>
+              <p>Triennial European prize recognizing original research in botany.</p>
+            </a>
+          </div>
+          <p style="margin-top:2em; max-width:680px; color:var(--ink-soft)">Both awarded for my PhD thesis <em>Life on Leaves: Biogeography, Evolution and Photobiont Interactions in Gomphillaceae</em>.</p>
         </div>
-        <div class="card reveal">
-          <span class="num">2026</span>
-          <h3>Adjudant Hubert Lefebvre Prize</h3>
-          <p>Royal Academy of Belgium, Class of Sciences. Triennial European prize recognizing original research in botany.</p>
-        </div>
+        <a class="recognition-thesis-cover" href="https://orbi.uliege.be/handle/2268/334975" aria-label="Open Elise Lebreton’s PhD thesis, Life on Leaves, on ORBi">
+          <img src="assets/img/thesis-cover.png" width="1090" height="1512" loading="lazy" alt="Cover of Elise Lebreton’s PhD thesis, Life on Leaves, featuring tropical leaves covered with lichens">
+        </a>
       </div>
-      <p style="margin-top:2em; max-width:680px; color:var(--ink-soft)">Both awarded for the PhD thesis <em>Life on Leaves: Biogeography, Evolution and Photobiont Interactions in Gomphillaceae</em>.</p>
-      <p style="max-width:680px"><a href="https://orbi.uliege.be/handle/2268/334975">Read the thesis →</a></p>
     </div>
   </section>
 
   <!-- ===== LATEST ===== -->
-  <section class="section section--dark">
+  <section class="section section--dark recent-entries-section" aria-labelledby="recent-entries-title">
     <div class="container">
       <p class="eyebrow">Latest</p>
-      <h2>Recent entries</h2>
+      <h2 id="recent-entries-title">Recent entries</h2>
       <div class="log" style="margin-top:2em">
-        <div class="log-entry reveal">
+        <div class="log-entry">
           <time class="log-date" datetime="2026-11">Nov 2026</time>
           <div><span class="log-dot"></span>
             <h4>French Guiana field expedition confirmed!</h4>
-            <p>I’ll be heading to French Guiana in April 2027 for a lichen inventory.</p>
+            <p>I'll be heading to French Guiana in April 2027 for a lichen inventory.</p>
           </div>
         </div>
-        <div class="log-entry reveal">
+        <div class="log-entry">
           <time class="log-date" datetime="2026-08">Aug 2026</time>
           <div><span class="log-dot"></span>
             <h4>Mason Hale Award at IAL10</h4>
-            <p>I’m back from the 10th International Lichenological Symposium in Trieste, where I gave a talk. On 30 July, I received the prestigious Mason Hale Award from the International Association for Lichenology for my doctoral research.</p>
+            <p>I'm back from the 10th International Lichenological Symposium in Trieste (Italy), where I was able to present my research thanks to an IAL mobility grant. On 30 July, I received the prestigious Mason Hale Award from the International Association for Lichenology for my doctoral research. A huge thank you to the IAL for its support!</p>
           </div>
         </div>
-        <div class="log-entry reveal">
+        <div class="log-entry">
           <time class="log-date" datetime="2026-06-12">Jun 2026</time>
           <div><span class="log-dot"></span>
             <h4>Proposal to conserve the name Gomphillaceae published in TAXON</h4>
-            <p>With Robert Lücking — a nomenclatural landmark for the family.</p>
-          </div>
-        </div>
-        <div class="log-entry reveal">
-          <time class="log-date" datetime="2026-06-06">Jun 2026</time>
-          <div><span class="log-dot"></span>
-            <h4>Adjudant Hubert Lefebvre Prize</h4>
-            <p>The Royal Academy of Belgium awarded me the Adjudant Hubert Lefebvre Prize for my doctoral research.</p>
-          </div>
-        </div>
-        <div class="log-entry reveal">
-          <time class="log-date" datetime="2026-04">Apr 2026</time>
-          <div><span class="log-dot"></span>
-            <h4>Lichen inventory in Guadeloupe</h4>
-            <p>I wrapped up a field expedition for the Guadeloupe Botanical Conservatory (CBNIG). I’m back home after nearly three months in the tropics, and I’ll miss the sunshine!</p>
-          </div>
-        </div>
-        <div class="log-entry reveal">
-          <time class="log-date" datetime="2026-03">Mar 2026</time>
-          <div><span class="log-dot"></span>
-            <h4>Two French national qualifications</h4>
-            <p>I’m delighted to have obtained two French national qualifications to apply for <em lang="fr">maître de conférences</em> (Associate Professor) positions at universities (MCF, CNU Section 68) and at the Muséum national d’Histoire naturelle (MCMU).</p>
-          </div>
-        </div>
-        <div class="log-entry reveal">
-          <time class="log-date" datetime="2026-03">Mar 2026</time>
-          <div><span class="log-dot"></span>
-            <h4>Saba Estafette Expedition — Critter Quest 2</h4>
-            <p>I’ve just wrapped up the lichen survey I co-led on Saba (Dutch Caribbean), one of the smallest inhabited islands in the Antilles. We collected around 800 specimens! Just enough time to catch two inter-island flights before my next field expedition in Guadeloupe.</p>
-          </div>
-        </div>
-        <div class="log-entry reveal">
-          <time class="log-date" datetime="2025-09-01">Sep 2025</time>
-          <div><span class="log-dot"></span>
-            <h4>Successfully defended my PhD!</h4>
-            <p>I defended my thesis on 1 September at the University of Liège, Belgium.</p>
-          </div>
-        </div>
-        <div class="log-entry reveal">
-          <time class="log-date" datetime="2025-02-17">Feb 2025</time>
-          <div><span class="log-dot"></span>
-            <h4>Global phylogeny of Gomphillaceae published in <em>IMA Fungus</em></h4>
-            <p>A global view of the origin, diversification and endemism of foliicolous lineages in the family. <a href="https://doi.org/10.3897/imafungus.16.144194">Read the article ↗</a></p>
+            <p>With Robert Lücking — a nomenclatural landmark for the family. <a href="https://onlinelibrary.wiley.com/doi/10.1002/tax.70180">Read the paper ↗</a></p>
+</p>
           </div>
         </div>
       </div>
+      <div class="recent-entries-extra" id="recent-entries-extra" aria-hidden="true" inert>
+        <div class="recent-entries-inner">
+        <div class="log recent-entries-more">
+          <div class="log-entry">
+            <time class="log-date" datetime="2026-06-06">Jun 2026</time>
+            <div><span class="log-dot"></span>
+              <h4>Adjudant Hubert Lefebvre Prize</h4>
+              <p>I'm honoured to have received this prize for my doctoral research. A heartfelt thank you to the Royal Academy of Belgium, Class of Sciences, for this recognition!</p>
+            </div>
+          </div>
+          <div class="log-entry">
+            <time class="log-date" datetime="2026-04">Apr 2026</time>
+            <div><span class="log-dot"></span>
+              <h4>Lichen inventory in Guadeloupe</h4>
+              <p>The field expedition for the Guadeloupe Botanical Conservatory (CBNIG) is finished. I'm back home after nearly three months in the Caribbean!</p>
+            </div>
+          </div>
+          <div class="log-entry">
+            <time class="log-date" datetime="2026-03">Mar 2026</time>
+            <div><span class="log-dot"></span>
+              <h4>Saba Estafette Expedition — Critter Quest 2</h4>
+              <p>I just finished the lichen expedition in Saba (Netherlands Antilles), one of the smallest inhabited islands in the Caribbean. I barely had time to catch two inter-island flights before my next field expedition to Guadeloupe.</p>
+            </div>
+          </div>
+ <div class="log-entry">
+            <time class="log-date" datetime="2026-03">Mar 2026</time>
+            <div><span class="log-dot"></span>
+              <h4>Two French national qualifications</h4>
+              <p>The results of the two qualification processes I went through in late 2025 are in, and I'm delighted to have been successful in both! I now hold the qualifications to apply for <em lang="fr">maître de conférences</em> [Associate Professor] positions at universities (MCF, CNU Section 68) and at the Muséum national d’Histoire naturelle (MCMU).</p>
+            </div>
+          </div>
+          <div class="log-entry">
+            <time class="log-date" datetime="2026-01">Jan 2026</time>
+            <div><span class="log-dot"></span>
+              <h4><a href="lichenscope.html">LichenScope</a> is officially registered!</h4>
+            </div>
+          </div>
+          <div class="log-entry">
+            <time class="log-date" datetime="2025-09-01">Sep 2025</time>
+            <div><span class="log-dot"></span>
+              <h4>Successfully defended my PhD!</h4>
+              <p>on 1 September at the University of Liège, Belgium.</p>
+            </div>
+          </div>
+          <div class="log-entry">
+            <time class="log-date" datetime="2025-02-17">Feb 2025</time>
+            <div><span class="log-dot"></span>
+              <h4>Global phylogeny of Gomphillaceae published in <em>IMA Fungus</em></h4>
+              <p>A global view of the origin, diversification and endemism of foliicolous lineages in the family. <a href="https://doi.org/10.3897/imafungus.16.144194">Read the paper ↗</a></p>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+      <button type="button" class="recent-entries-toggle" id="recent-entries-toggle" aria-expanded="false" aria-controls="recent-entries-extra">
+        <span class="recent-entries-toggle-label">See more</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
       <div style="margin-top:2.4em">
         <a href="cv.html" class="btn">Full CV &amp; timeline →</a>
       </div>
     </div>
   </section>
 
-  <!-- ===== LATEST ON LINKEDIN ===== -->
-  <section class="section">
-    <div class="container">
-      <p class="eyebrow">LinkedIn</p>
-      <h2>Latest updates</h2>
-      <p class="lede" style="max-width:680px">Recent posts from my LinkedIn profile.</p>
-      <div class="grid grid--2" style="margin-top:2em">
-        <div class="linkedin-embed reveal">
-          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7496161082324008960?collapsed=1" height="627" width="504" frameborder="0" allowfullscreen="" title="Post intégré"></iframe>
-        </div>
-        <div class="linkedin-embed reveal">
-          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7491492275152228352?collapsed=1" height="627" width="504" frameborder="0" allowfullscreen="" title="Post intégré"></iframe>
-        </div>
-        <div class="linkedin-embed reveal">
-          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7477397819805581312?collapsed=1" height="627" width="504" frameborder="0" allowfullscreen="" title="Post intégré"></iframe>
-        </div>
-        <div class="linkedin-embed reveal">
-          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7470906912776224768?collapsed=1" height="627" width="504" frameborder="0" allowfullscreen="" title="Post intégré"></iframe>
-        </div>
+  <!-- ===== FOLLOW RESEARCH IN PROGRESS ===== -->
+  <section class="section social-update" aria-labelledby="social-update-title">
+    <div class="container social-update-inner">
+      <div>
+        <p class="eyebrow">Stay connected (LinkedIn)</p>
+        <h2 id="social-update-title">Research in progress</h2>
+        <p>Field notes, new publications, life behind the research...</p>
       </div>
-      <p style="margin-top:2em"><a href="https://www.linkedin.com/in/elise-lebreton-a52751171/">See more on LinkedIn →</a></p>
+      <a class="btn" href="https://www.linkedin.com/in/elise-lebreton-a52751171/">Follow on LinkedIn</a>
     </div>
   </section>
 
@@ -414,6 +938,95 @@
   });
 
   dots[0].classList.add("is-active");
+})();
+</script>
+
+
+<script>
+/* Read-more interaction for the older news, matching About. */
+(function () {
+  var button = document.getElementById('recent-entries-toggle');
+  var extra = document.getElementById('recent-entries-extra');
+  if (!button || !extra) return;
+  var label = button.querySelector('.recent-entries-toggle-label');
+  button.addEventListener('click', function () {
+    var expanded = button.getAttribute('aria-expanded') !== 'true';
+    button.setAttribute('aria-expanded', String(expanded));
+    button.classList.toggle('is-expanded', expanded);
+    extra.classList.toggle('is-expanded', expanded);
+    extra.setAttribute('aria-hidden', String(!expanded));
+    extra.inert = !expanded;
+    label.textContent = expanded ? 'See less' : 'See more';
+  });
+})();
+</script>
+
+<script>
+/* About: independent disclosure and manually controlled photo carousel. */
+(function () {
+  var more = document.getElementById('about-readmore');
+  var biography = document.getElementById('about-text');
+  if (more && biography) {
+    more.addEventListener('click', function () {
+      var expanded = more.getAttribute('aria-expanded') !== 'true';
+      more.setAttribute('aria-expanded', String(expanded));
+      more.classList.toggle('is-expanded', expanded);
+      more.querySelector('span').textContent = expanded ? 'See less' : 'See more';
+      biography.classList.toggle('is-expanded', expanded);
+      biography.setAttribute('aria-hidden', String(!expanded));
+      biography.inert = !expanded;
+    });
+  }
+  var gallery = document.getElementById('about-gallery');
+  if (!gallery) return;
+  var slides = Array.prototype.slice.call(gallery.querySelectorAll('.about-slide'));
+  var dots = Array.prototype.slice.call(gallery.querySelectorAll('.about-gallery-dot'));
+  var count = gallery.querySelector('.about-gallery-count');
+  if (!slides.length) return;
+  function preparePhotos() {
+    slides.forEach(function (slide) { slide.querySelector('img').loading = 'eager'; });
+  }
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      if (entries.some(function (entry) { return entry.isIntersecting; })) {
+        preparePhotos();
+        observer.disconnect();
+      }
+    }, { rootMargin: '200px' });
+    observer.observe(gallery);
+  } else {
+    preparePhotos();
+  }
+  var current = 0;
+  function show(index) {
+    current = (index + slides.length) % slides.length;
+    slides[current].querySelector('img').loading = 'eager';
+    slides.forEach(function (slide, i) { slide.hidden = i !== current; });
+    dots.forEach(function (dot, i) { dot.setAttribute('aria-current', String(i === current)); });
+    count.textContent = (current + 1) + ' / ' + slides.length;
+  }
+  gallery.querySelectorAll('[data-gallery-direction]').forEach(function (button) {
+    button.addEventListener('click', function () { show(current + Number(button.dataset.galleryDirection)); });
+  });
+  dots.forEach(function (dot, i) { dot.addEventListener('click', function () { show(i); }); });
+  gallery.addEventListener('keydown', function (event) {
+    if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+    event.preventDefault();
+    show(current + (event.key === 'ArrowLeft' ? -1 : 1));
+  });
+  var touch = null;
+  var stage = gallery.querySelector('.about-gallery-stage');
+  stage.addEventListener('touchstart', function (event) {
+    touch = event.touches.length === 1 ? { x: event.touches[0].clientX, y: event.touches[0].clientY } : null;
+  }, { passive: true });
+  stage.addEventListener('touchend', function (event) {
+    if (!touch || !event.changedTouches.length) return;
+    var dx = event.changedTouches[0].clientX - touch.x;
+    var dy = event.changedTouches[0].clientY - touch.y;
+    touch = null;
+    if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) + 20) show(current + (dx < 0 ? 1 : -1));
+  }, { passive: true });
+  stage.addEventListener('touchcancel', function () { touch = null; }, { passive: true });
 })();
 </script>
 </body>

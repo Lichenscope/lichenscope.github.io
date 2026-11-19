@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LichenScope | Elise Lebreton</title>
 <meta name="description" content="LichenScope — independent lichenology research practice founded by Elise Lebreton, PhD, conducting tropical biodiversity fieldwork, DNA barcoding and collection development across the Caribbean and French Guiana.">
-<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/img/favicon-lichenscope.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -49,6 +49,42 @@
       grid-template-columns: 1fr;
     }
   }
+
+  .lichenscope-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 320px);
+    align-items: center;
+    gap: clamp(2rem, 5vw, 4rem);
+  }
+
+  .lichenscope-intro-logo {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    justify-self: end;
+  }
+
+  @media (max-width: 820px) {
+    .lichenscope-intro {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .lichenscope-intro-logo {
+      max-width: 240px;
+      justify-self: center;
+    }
+  }
+  /* Partner and funder links in Selected projects */
+  .selected-projects .log-entry p a {
+    text-decoration: underline;
+    text-underline-offset: .2em;
+  }
+  .selected-projects .log-entry p a:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+  }
 </style>
 </head>
 <body>
@@ -65,7 +101,6 @@
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="research.html">Research</a></li>
-        <li><a href="publications.html">Publications</a></li>
         <li><a href="lichenscope.html" class="active">LichenScope</a></li>
         <li><a href="services.html">Services &amp; Outreach</a></li>
         <li><a href="cv.html">CV</a></li>
@@ -77,10 +112,13 @@
 
 <main>
 
-  <section class="container page-head">
-    <p class="eyebrow">LichenScope</p>
-    <h1>Independent research in lichenology</h1>
-    <p class="lede" style="max-width:680px">LichenScope is my independent research practice. It gives me the freedom to develop my own projects with partners both within and beyond academia.</p>
+  <section class="container page-head lichenscope-intro">
+    <div>
+      <p class="eyebrow">LichenScope</p>
+      <h1>Independent research in lichenology</h1>
+      <p class="lede" style="max-width:680px">LichenScope is my independent research practice. It gives me the freedom to develop my own projects with partners both within and beyond academia.</p>
+    </div>
+    <img class="lichenscope-intro-logo" src="assets/img/lichenscope-logo.png" width="1825" height="2048" alt="LichenScope logo with the initials LS and lichens">
   </section>
 
   <!-- ABOUT -->
@@ -171,7 +209,7 @@
   </section>
 
   <!-- SELECTED PROJECTS -->
-  <section class="section section--dark">
+  <section class="section section--dark selected-projects">
     <div class="container">
       <p class="eyebrow">Selected projects</p>
       <h2>Recent &amp; ongoing work</h2>
@@ -181,21 +219,21 @@
           <div><span class="log-dot"></span>
             <h4>Lichen inventory of Guadeloupe</h4>
             <p>I lead a lichen inventory on Guadeloupe’s two main islands, Basse-Terre and Grande-Terre. The project includes compiling a species checklist and establishing the first dedicated lichen collection at the GUAD herbarium.
-Funded by the Guadeloupe Botanical Conservatory (CBNIG), ARBIG and DEAL.</p>
+This work is carried out in collaboration with Meise Botanic Garden and the University of Liège. Funded by the Guadeloupe Botanical Conservatory (CBNIG), <a href="https://www.arb-guadeloupe.fr/">ARBIG</a> and <a href="https://www.guadeloupe.developpement-durable.gouv.fr/">DEAL Guadeloupe</a>.</p>
           </div>
         </div>
         <div class="log-entry reveal">
           <span class="log-date">2026</span>
           <div><span class="log-dot"></span>
             <h4>Saba Estafette Expedition — Critter Quest 2</h4>
-            <p>At the invitation of the founder of the Saba Estafette Expedition, I joined Critter Quest 2 on Saba (Dutch Caribbean) and co-led its lichen expedition. This checklist is conducted in collaboration with Naturalis Biodiversity Center and the Botanic Garden and Botanical Museum Berlin (BGBM), with funding from the Sea & Learn Foundation and the Hugo de Vries Fonds.</p>
+            <p>At the invitation of the founder of the Saba Estafette Expedition, I joined Critter Quest 2 on Saba (Dutch Caribbean) and co-led its lichen expedition. This checklist is conducted in collaboration with Naturalis Biodiversity Center and the Botanic Garden and Botanical Museum Berlin (BGBM), with funding from the <a href="https://www.seaandlearn.org/">Sea &amp; Learn Foundation</a> and the <a href="https://hugodevriesfonds.nl/subsidie-voorwaarden/">Hugo de Vries Fonds</a>.</p>
           </div>
         </div>
         <div class="log-entry reveal">
           <span class="log-date">2027</span>
           <div><span class="log-dot"></span>
             <h4>Lichen inventory in French Guiana (upcoming)</h4>
-            <p>I will lead a three-week field expedition to the Réserve naturelle nationale de La Trinité to document lichen diversity and establish a baseline dataset for the reserve.</p>
+            <p>I will lead a three-week field expedition to the <a href="https://www.reserve-trinite.fr/" lang="fr">Réserve naturelle nationale de La Trinité</a> to document lichen diversity and establish a baseline dataset for the reserve.</p>
           </div>
         </div>
       </div>

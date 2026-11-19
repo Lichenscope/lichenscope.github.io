@@ -5,11 +5,40 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CV | Elise Lebreton — LichenScope</title>
 <meta name="description" content="Curriculum vitae of Elise Lebreton — current positions, research experience and education.">
-<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/img/favicon-lichenscope.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
+<style>
+  /* Institution logos: keep the existing timeline and date column. */
+  .cv-entry-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .8rem;
+    min-width: 0;
+  }
+  .cv-entry-meta .log-date {
+    display: block;
+    font-size: .875rem;
+    line-height: 1.5;
+  }
+  .cv-institution-logo {
+    display: block;
+    width: 78px;
+    height: 60px;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: left top;
+    mix-blend-mode: multiply;
+  }
+  .log-entry > div:last-child { min-width: 0; }
+  @media (max-width: 620px) {
+    .cv-entry-meta { gap: .65rem; }
+    .cv-institution-logo { width: 50px; height: 46px; }
+  }
+</style>
 </head>
 <body>
 
@@ -25,7 +54,6 @@
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="research.html">Research</a></li>
-        <li><a href="publications.html">Publications</a></li>
         <li><a href="lichenscope.html">LichenScope</a></li>
         <li><a href="services.html">Services &amp; Outreach</a></li>
         <li><a href="cv.html" class="active">CV</a></li>
@@ -52,7 +80,11 @@
         <p class="eyebrow">Current positions</p>
         <div class="log">
           <div class="log-entry">
-            <span class="log-date">Jan 2026 –</span>
+            <div class="cv-entry-meta">
+              <span class="log-date">Jan 2026 –</span>
+              <img class="cv-institution-logo" src="assets/img/lichenscope-logo.png" width="1825" height="2048"
+                   alt="LichenScope" loading="lazy" decoding="async">
+            </div>
             <div>
               <span class="log-dot"></span>
               <h4>Founder and Independent Researcher — LichenScope, France</h4>
@@ -60,7 +92,11 @@
             </div>
           </div>
           <div class="log-entry">
-            <span class="log-date">Nov 2026 –</span>
+            <div class="cv-entry-meta">
+              <span class="log-date">Nov 2026 –</span>
+              <img class="cv-institution-logo" src="assets/img/institutions/meise.svg" width="2680" height="1271"
+                   alt="Meise Botanic Garden" loading="lazy" decoding="async">
+            </div>
             <div>
               <span class="log-dot"></span>
               <h4>Scientific Collaborator (unpaid appointment) — Herbarium BR, Meise Botanic Garden, Belgium</h4>
@@ -68,7 +104,11 @@
             </div>
           </div>
           <div class="log-entry">
-            <span class="log-date">Sep 2025 –</span>
+            <div class="cv-entry-meta">
+              <span class="log-date">Sep 2025 –</span>
+              <img class="cv-institution-logo" src="assets/img/institutions/uliege.png" width="600" height="600"
+                   alt="Université de Liège" loading="lazy" decoding="async">
+            </div>
             <div>
               <span class="log-dot"></span>
               <h4>Scientific Collaborator (unpaid appointment) — BEC laboratory, University of Liège, Belgium</h4>
@@ -83,7 +123,11 @@
         <p class="eyebrow">Previous research experience</p>
         <div class="log">
           <div class="log-entry">
-            <span class="log-date">2026</span>
+            <div class="cv-entry-meta">
+              <span class="log-date">2026</span>
+              <img class="cv-institution-logo" src="assets/img/institutions/societe-botanique-liege.png" width="234" height="301"
+                   alt="Société Botanique de Liège" loading="lazy" decoding="async">
+            </div>
             <div>
               <span class="log-dot"></span>
               <h4>Data Analyst / Research Officer (3 months) — Botanical Society of Liège, Belgium</h4>
@@ -91,7 +135,11 @@
             </div>
           </div>
           <div class="log-entry">
-            <span class="log-date">2025</span>
+            <div class="cv-entry-meta">
+              <span class="log-date">2025</span>
+              <img class="cv-institution-logo" src="assets/img/institutions/mnhn.svg" width="104" height="120"
+                   alt="Muséum national d’Histoire naturelle" loading="lazy" decoding="async">
+            </div>
             <div>
               <span class="log-dot"></span>
               <h4>Research Officer (2 months) — Herbarium PC, National Museum of Natural History (MNHN), Paris, France</h4>
@@ -99,7 +147,11 @@
             </div>
           </div>
           <div class="log-entry">
-            <span class="log-date">2021–2025</span>
+            <div class="cv-entry-meta">
+              <span class="log-date">2021–2025</span>
+              <img class="cv-institution-logo" src="assets/img/institutions/uliege.png" width="600" height="600"
+                   alt="Université de Liège" loading="lazy" decoding="async">
+            </div>
             <div>
               <span class="log-dot"></span>
               <h4>PhD Researcher (FNRS–FRIA Fellow) — University of Liège, Belgium</h4>
@@ -107,7 +159,11 @@
             </div>
           </div>
           <div class="log-entry">
-            <span class="log-date">2019–2021</span>
+            <div class="cv-entry-meta">
+              <span class="log-date">2019–2021</span>
+              <img class="cv-institution-logo" src="assets/img/institutions/mnhn.svg" width="104" height="120"
+                   alt="Muséum national d’Histoire naturelle" loading="lazy" decoding="async">
+            </div>
             <div>
               <span class="log-dot"></span>
               <h4>Research Assistant — Herbarium P, MNHN, Paris, France</h4>
@@ -122,7 +178,11 @@
         <p class="eyebrow">Early research experience &amp; internships</p>
         <div class="log">
           <div class="log-entry">
-            <span class="log-date">2019</span>
+            <div class="cv-entry-meta">
+              <span class="log-date">2019</span>
+              <img class="cv-institution-logo" src="assets/img/institutions/mnhn.svg" width="104" height="120"
+                   alt="Muséum national d’Histoire naturelle" loading="lazy" decoding="async">
+            </div>
             <div>
               <span class="log-dot"></span>
               <h4>MSc thesis (6 months) — MNHN, Paris, France</h4>
@@ -130,7 +190,11 @@
             </div>
           </div>
           <div class="log-entry">
-            <span class="log-date">2018</span>
+            <div class="cv-entry-meta">
+              <span class="log-date">2018</span>
+              <img class="cv-institution-logo" src="assets/img/institutions/mnhn.svg" width="104" height="120"
+                   alt="Muséum national d’Histoire naturelle" loading="lazy" decoding="async">
+            </div>
             <div>
               <span class="log-dot"></span>
               <h4>MSc research internship (6 months) — MNHN, Paris, France</h4>
@@ -138,7 +202,11 @@
             </div>
           </div>
           <div class="log-entry">
-            <span class="log-date">2017</span>
+            <div class="cv-entry-meta">
+              <span class="log-date">2017</span>
+              <img class="cv-institution-logo" src="assets/img/institutions/antilles.svg" width="185" height="185"
+                   alt="Université des Antilles" loading="lazy" decoding="async">
+            </div>
             <div>
               <span class="log-dot"></span>
               <h4>Maîtrise research project (2 months) — University of Antilles, Guadeloupe</h4>
@@ -146,7 +214,11 @@
             </div>
           </div>
           <div class="log-entry">
-            <span class="log-date">2016</span>
+            <div class="cv-entry-meta">
+              <span class="log-date">2016</span>
+              <img class="cv-institution-logo" src="assets/img/institutions/la-rochelle.png" width="240" height="240"
+                   alt="La Rochelle Université" loading="lazy" decoding="async">
+            </div>
             <div>
               <span class="log-dot"></span>
               <h4>BSc research project (2 months) — La Rochelle University, France</h4>
@@ -161,7 +233,11 @@
         <p class="eyebrow">Education</p>
         <div class="log">
           <div class="log-entry">
-            <span class="log-date">2021–2025</span>
+            <div class="cv-entry-meta">
+              <span class="log-date">2021–2025</span>
+              <img class="cv-institution-logo" src="assets/img/institutions/uliege.png" width="600" height="600"
+                   alt="Université de Liège" loading="lazy" decoding="async">
+            </div>
             <div>
               <span class="log-dot"></span>
               <h4>PhD in Sciences — University of Liège</h4>
@@ -171,7 +247,11 @@
             </div>
           </div>
           <div class="log-entry">
-            <span class="log-date">2017–2019</span>
+            <div class="cv-entry-meta">
+              <span class="log-date">2017–2019</span>
+              <img class="cv-institution-logo" src="assets/img/institutions/montpellier.png" width="1024" height="446"
+                   alt="Université de Montpellier" loading="lazy" decoding="async">
+            </div>
             <div>
               <span class="log-dot"></span>
               <h4>MSc in Plant Biodiversity and Tropical Ecosystem Management (BioGET) — University of Montpellier</h4>
@@ -179,7 +259,11 @@
             </div>
           </div>
           <div class="log-entry">
-            <span class="log-date">2016–2017</span>
+            <div class="cv-entry-meta">
+              <span class="log-date">2016–2017</span>
+              <img class="cv-institution-logo" src="assets/img/institutions/antilles.svg" width="185" height="185"
+                   alt="Université des Antilles" loading="lazy" decoding="async">
+            </div>
             <div>
               <span class="log-dot"></span>
               <h4>French Maîtrise in Managed Tropical Ecosystems (ECOTROP) — University of Antilles</h4>
@@ -187,7 +271,11 @@
             </div>
           </div>
           <div class="log-entry">
-            <span class="log-date">2014–2016</span>
+            <div class="cv-entry-meta">
+              <span class="log-date">2014–2016</span>
+              <img class="cv-institution-logo" src="assets/img/institutions/la-rochelle.png" width="240" height="240"
+                   alt="La Rochelle Université" loading="lazy" decoding="async">
+            </div>
             <div>
               <span class="log-dot"></span>
               <h4>BSc in Biology — La Rochelle University</h4>
