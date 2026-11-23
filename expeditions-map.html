@@ -6,14 +6,17 @@
 <title>Field expeditions | Elise Lebreton</title>
 <style>
   :root {
-    --ink: #24382e;
-    --muted: #485a4e;
-    --surface: #f8f6ee;
-    --ocean: #e2ebe5;
-    --land: #b5c6a3;
-    --coast: #899e81;
-    --green: #2c5843;
-    --line: #c6d0be;
+    --ink: #26302E;
+    --muted: #52605B;
+    --surface: #FAFAF7;
+    --ocean: #EDF2F0;
+    --land: #C4D1CB;
+    --coast: #8D9F97;
+    --green: #526F73;
+    --accent: #526F73;
+    --accent-deep: #3C5960;
+    --line: #D8DFDB;
+    --marker-active: #AF7B28;
     color-scheme: light;
   }
 
@@ -21,12 +24,13 @@
   body {
     margin: 0;
     color: var(--ink);
+    background: var(--surface);
     font: 0.9rem/1.45 "Work Sans", system-ui, sans-serif;
   }
 
   button { font: inherit; color: inherit; cursor: pointer; }
   button:focus-visible, a:focus-visible {
-    outline: 2px solid #8b4e18;
+    outline: 2px solid var(--accent-deep);
     outline-offset: 3px;
   }
 
@@ -54,10 +58,15 @@
     font-size: 0.83rem;
   }
 
+  .views button:hover {
+    border-color: var(--green);
+    background: var(--ocean);
+  }
+
   .views button[aria-pressed="true"] {
     border-color: var(--green);
     background: var(--green);
-    color: white;
+    color: #FFFFFF;
   }
 
   .map {
@@ -93,7 +102,7 @@
 
   .graticule {
     fill: none;
-    stroke: #a9b8ad;
+    stroke: #A9B8B2;
     stroke-width: 0.65;
     stroke-dasharray: 2 3;
     vector-effect: non-scaling-stroke;
@@ -116,15 +125,15 @@
     content: "";
     width: 0.88rem;
     height: 0.88rem;
-    border: 2px solid white;
+    border: 2px solid #FFFFFF;
     border-radius: 50%;
     background: var(--green);
     box-shadow: 0 0 0 1px var(--green);
   }
 
   .marker:hover::before, .marker[aria-pressed="true"]::before {
-    background: #a45f21;
-    box-shadow: 0 0 0 1px #8b4e18;
+    background: var(--marker-active);
+    box-shadow: 0 0 0 1px var(--marker-active);
   }
 
   .marker-label {
@@ -188,7 +197,7 @@
   }
 
   .expedition-list button:hover, .expedition-list button[aria-pressed="true"] {
-    border-color: var(--green);
+    border-color: var(--accent-deep);
     background: var(--ocean);
   }
 
@@ -241,6 +250,11 @@
     border: 1px solid var(--line);
     border-radius: 0.35rem;
     background: transparent;
+  }
+
+  .photo-controls button:hover {
+    border-color: var(--green);
+    background: var(--ocean);
   }
 
   @media (min-width: 640px) {

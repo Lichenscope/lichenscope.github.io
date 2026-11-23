@@ -143,6 +143,253 @@ h3 { font-family: var(--body); font-weight: 500; }
 .lichen-gallery-grid video { background: rgba(38,48,46,.06); }
 .reviewer-journals a { color: var(--ink); border-color: var(--line); }
 </style>
+<style id="why-lichens-matter-styles">
+/* Scoped styles for the new educational section. */
+.lichens-matter {
+  border-block: 1px solid var(--line);
+  padding-block: 0;
+}
+.lichen-overview-toggle {
+  position: relative;
+  padding: 2rem 2.5rem 2rem 0;
+  cursor: pointer;
+  list-style: none;
+}
+.lichen-overview-toggle::-webkit-details-marker { display: none; }
+.lichen-overview-toggle h2 { margin: 0; }
+.lichen-overview-toggle::before,
+.lichen-overview-toggle::after {
+  content: '';
+  position: absolute;
+  right: .3rem;
+  top: calc(50% - .75px);
+  width: 18px;
+  height: 1.5px;
+  background: var(--forest-light);
+}
+.lichen-overview-toggle::after { transform: rotate(90deg); }
+.lichen-overview[open] > .lichen-overview-toggle::after { transform: rotate(0); }
+.lichen-overview-body { padding: .5rem 0 clamp(3.5rem, 7vw, 5.5rem); }
+.lichen-definition { width: 100%; }
+.lichen-definition p:last-child { margin-bottom: 0; }
+.lichen-symbiosis-figures {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 4fr);
+  align-items: start;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  max-width: 900px;
+  margin: 2rem auto 0;
+}
+.lichen-symbiosis-figure {
+  margin: 0;
+  min-width: 0;
+  width: 100%;
+  max-width: 360px;
+  justify-self: center;
+}
+.lichen-symbiosis-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: transparent;
+  border: 0;
+}
+/* The holobiome diagram has more space than the cross-section photograph. */
+.lichen-symbiosis-figure--holobiome {
+  max-width: 480px;
+}
+.lichen-symbiosis-figure--holobiome img {
+  aspect-ratio: auto;
+}
+.lichen-symbiosis-figure figcaption {
+  margin-top: .85rem;
+  color: var(--ink-soft);
+  font-size: .875rem;
+  line-height: 1.6;
+}
+.lichen-figure-source { display: block; margin-top: .45rem; }
+.lichen-symbiosis-figure figcaption a {
+  text-decoration: underline;
+  text-underline-offset: .18em;
+}
+.lichen-reasons { margin-top: clamp(3.5rem, 7vw, 5.5rem); }
+.lichen-reasons-header {
+  display: flex;
+  gap: 1.5rem;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+.lichen-reasons-header h3 {
+  max-width: 28ch;
+  font-family: var(--display);
+  font-size: clamp(1.6rem, 3vw, 2.15rem);
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0;
+}
+.lichen-reasons-toggle {
+  flex-shrink: 0;
+  font: 500 .875rem/1.5 var(--body);
+  color: var(--accent-deep);
+  border: 0;
+  background: none;
+  padding: .65rem 0 .3rem;
+  text-decoration: underline;
+  text-underline-offset: .25em;
+  cursor: pointer;
+}
+.lichen-reasons-toggle[hidden] { display: none; }
+.lichen-reason { border-top: 1px solid var(--line); }
+.lichen-reason:last-child { border-bottom: 1px solid var(--line); }
+.lichen-reason > summary {
+  display: grid;
+  grid-template-columns: 2.5rem minmax(0, 1fr) 1.5rem;
+  gap: 1.25rem;
+  align-items: center;
+  list-style: none;
+  padding: 1.5rem .5rem 1.5rem 0;
+  cursor: pointer;
+}
+.lichen-reason > summary::-webkit-details-marker { display: none; }
+.lichen-reason-number {
+  color: var(--forest-light);
+  font: 400 1.65rem/1 var(--display);
+  font-variant-numeric: tabular-nums;
+}
+.lichen-reason-title {
+  font-size: 1.13rem;
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--forest);
+}
+.lichen-reason-icon {
+  position: relative;
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--forest-light);
+}
+.lichen-reason-icon::before,
+.lichen-reason-icon::after {
+  content: '';
+  position: absolute;
+  top: calc(50% - .75px);
+  left: 2px;
+  width: 16px;
+  height: 1.5px;
+  background: currentColor;
+}
+.lichen-reason-icon::after { transform: rotate(90deg); }
+.lichen-reason[open] .lichen-reason-icon::after { transform: rotate(0); }
+.lichen-reason[open] > summary { padding-bottom: .95rem; }
+.lichen-reason > summary:hover .lichen-reason-title { color: var(--accent-deep); }
+.lichen-reason-body {
+  max-width: 77ch;
+  margin-left: 3.75rem;
+  padding: 0 2.5rem 1.65rem 0;
+  color: var(--ink-soft);
+}
+.lichen-reason-body p:last-child { margin-bottom: 0; }
+.lichen-knowledge {
+  margin-top: clamp(3.5rem, 7vw, 5.5rem);
+  background: var(--canopy);
+}
+.lichen-knowledge > summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 1.25rem;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem clamp(1.5rem, 3.5vw, 3rem);
+  list-style: none;
+  cursor: pointer;
+}
+.lichen-knowledge > summary::-webkit-details-marker { display: none; }
+.lichen-knowledge-title {
+  font-family: var(--display);
+  font-size: clamp(1.5rem, 2.6vw, 1.85rem);
+  font-weight: 400;
+  line-height: 1.25;
+}
+.lichen-knowledge[open] .lichen-reason-icon::after { transform: rotate(0); }
+.lichen-knowledge-body {
+  padding: 0 clamp(1.5rem, 3.5vw, 3rem) clamp(1.5rem, 3.5vw, 3rem);
+  max-width: 85ch;
+}
+.lichen-knowledge p:last-child { margin-bottom: 0; }
+.lichen-knowledge a {
+  text-decoration: underline;
+  text-underline-offset: .18em;
+}
+.lichen-knowledge-mission {
+  border-left: 2px solid var(--forest-light);
+  padding-left: 1.2rem;
+  margin-top: 1.5rem;
+}
+.lichen-reasons-toggle:focus-visible,
+.lichen-overview-toggle:focus-visible,
+.lichen-reason > summary:focus-visible,
+.lichen-knowledge > summary:focus-visible,
+.lichen-symbiosis-figure figcaption a:focus-visible,
+.lichen-knowledge a:focus-visible {
+  outline: 2px solid var(--accent-deep);
+  outline-offset: 5px;
+}
+#why-lichens-matter { scroll-margin-top: 6rem; }
+@media (max-width: 760px) {
+  .lichen-reasons-header { align-items: start; }
+  .lichen-reasons-header h3 { max-width: 20ch; }
+}
+@media (max-width: 680px) {
+  .lichen-symbiosis-figures { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 480px) {
+  .lichen-reasons-header { display: block; }
+  .lichen-reasons-toggle { margin-top: .5rem; }
+  .lichen-reason > summary {
+    grid-template-columns: 1.75rem minmax(0, 1fr) 1.25rem;
+    gap: .7rem;
+    padding-block: 1.2rem;
+  }
+  .lichen-reason-number { font-size: 1.4rem; }
+  .lichen-reason-title { font-size: 1.05rem; }
+  .lichen-reason-body { margin-left: 2.45rem; padding-right: 0; }
+}
+@media print {
+  .lichen-reasons-toggle, .lichen-reason-icon { display: none; }
+  .lichen-reason { break-inside: avoid; }
+}
+
+/* Research-focused variant. */
+.academic-intent { font-weight: 500; }
+.selected-projects .log-entry p.project-outputs {
+  margin-top: .9rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--forest-light);
+}
+.project-outputs strong { color: var(--ink); font-weight: 600; }
+.lichen-citation { color: var(--accent-deep); white-space: nowrap; }
+.lichen-reading {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: .875rem;
+  line-height: 1.6;
+}
+.lichen-reading h3 { font-size: 1rem; margin-bottom: .9rem; }
+.lichen-reading ol { margin: 0; padding-left: 1.4rem; }
+.lichen-reading li { list-style: decimal; margin-bottom: .8rem; scroll-margin-top: 6rem; }
+.lichen-reading li:last-child { margin-bottom: 0; }
+.lichen-reading a { text-decoration: underline; text-underline-offset: .18em; }
+.lichen-reading a:focus-visible, .lichen-citation:focus-visible {
+  outline: 2px solid var(--accent-deep);
+  outline-offset: 3px;
+}
+
+</style>
 </head>
 <body>
 
@@ -173,7 +420,7 @@ h3 { font-family: var(--body); font-weight: 500; }
     <div>
       <p class="eyebrow">LichenScope</p>
       <h1>Independent research in lichenology</h1>
-      <p class="lede" style="max-width:680px">LichenScope is my independent research practice. It gives me the freedom to develop my own projects with partners both within and beyond academia.</p>
+      <p class="lede" style="max-width:680px">I founded LichenScope as a research initiative to document lichen diversity, build scientific collections and share knowledge, working alongside researchers, conservation organisations and lichen enthusiasts.</p>
     </div>
     <img class="lichenscope-intro-logo" src="assets/img/lichenscope-logo.png" width="1825" height="2048" alt="LichenScope logo with the initials LS and lichens">
   </section>
@@ -182,8 +429,132 @@ h3 { font-family: var(--body); font-weight: 500; }
   <section class="section section--alt">
     <div class="container" style="max-width:760px">
       <p class="eyebrow">About</p>
-      <p>I founded LichenScope in January 2026 to provide lichenological expertise in regions where it is scarce. I build on the fieldwork I began during my PhD through partnerships with universities, botanic gardens, natural history museums, botanical conservatories, national parks and other conservation organisations.</p>
-      <p>I produce validated datasets and species checklists for project partners and the wider scientific community. Where appropriate, I also publish the findings in peer-reviewed journals.</p>
+      <p>I founded LichenScope in January 2026 to pursue my research and provide expertise in regions with few lichenologists. Through consultancy projects, I conduct fieldwork to document lichen diversity and produce reliable data for research and conservation. Where possible, I complement these inventories with DNA barcode data linked to herbarium specimens. I share the resulting knowledge through collaborations and peer-reviewed publications.</p>
+      <p class="academic-intent"><strong>My ambition is to pursue and develop this work within a research institution, such as a university or a natural history museum.</strong></p>
+    </div>
+  </section>
+
+<!-- WHY LICHENS MATTER -->
+  <section class="section lichens-matter" id="why-lichens-matter" aria-labelledby="why-lichens-title">
+    <div class="container">
+      <details class="lichen-overview" open>
+        <summary class="lichen-overview-toggle">
+          <h2 id="why-lichens-title">Why do lichens matter?</h2>
+        </summary>
+        <div class="lichen-overview-body">
+          <div class="lichen-definition">
+            <p>A lichen results from a symbiotic association between a fungus and one or more photosynthetic partners: green algae, cyanobacteria, or both. In most cases, the fungus makes up most of the biomass, protecting and "exploiting" its photosynthetic partners, which supply it with sugars and related compounds derived from photosynthesis.</p>
+            <p>Other organisms, including fungi and bacteria, also live on and within lichens. Identifying these organisms and exploring their functions is an active area of research that continues to reshape our understanding of this association.</p>
+          </div>
+
+          <div class="lichen-symbiosis-figures" role="group" aria-label="Figures from my PhD thesis manuscript">
+            <figure class="lichen-symbiosis-figure">
+              <img src="assets/img/mazosia-byssoidea-thallus-section.png" width="2048" height="1574" alt="Cross-section of the thallus of Mazosia byssoidea: green algal cells form the photobiont layer above the fungal medulla; scale bar 50 micrometres.">
+              <figcaption><i>Mazosia byssoidea</i>, a lichen endemic to Guadeloupe. Section through the thallus showing the principal and visible components of the lichen symbiosis.<span class="lichen-figure-source">From my <a href="https://orbi.uliege.be/handle/2268/334975">PhD thesis manuscript</a>.</span></figcaption>
+            </figure>
+            <figure class="lichen-symbiosis-figure lichen-symbiosis-figure--holobiome">
+              <img src="assets/img/lichen-holobiome.png" width="2047" height="1519" alt="Diagram of the lichen holobiome: the lichen-forming fungus and photosynthetic partners in solid rectangles, with other associated fungi, bacteria, small animals and viruses in dashed rectangles.">
+              <figcaption>The lichen ecosystem or holobiome. Drawings from <a href="https://www.cell.com/trends/ecology-evolution/abstract/S0169-5347(22)00057-X?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS016953472200057X%3Fshowall%3Dtrue">Allen &amp; Lendemer (2022)</a>.<span class="lichen-figure-source">From my <a href="https://orbi.uliege.be/handle/2268/334975">PhD thesis manuscript</a>.</span></figcaption>
+            </figure>
+          </div>
+
+      <div class="lichen-reasons" aria-labelledby="lichen-reasons-title">
+        <div class="lichen-reasons-header">
+          <h3 id="lichen-reasons-title">Six reasons to take a closer look at lichens</h3>
+          <button class="lichen-reasons-toggle" type="button" hidden>Expand all</button>
+        </div>
+
+        <div class="lichen-reasons-list">
+          <details class="lichen-reason" open>
+            <summary>
+              <span class="lichen-reason-number" aria-hidden="true">01</span>
+              <span class="lichen-reason-title">A remarkable system for understanding how organisms live together</span>
+              <span class="lichen-reason-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="lichen-reason-body">
+              <p>Studying lichens means exploring interactions between several major branches of the tree of life: fungi, algae and bacteria. Lichenology lies at the crossroads of several fields, including microbiology, mycology, phycology, ecology, chemistry and evolutionary biology. It is a complex discipline, but this complexity is precisely what makes it so fascinating, opening up a wide range of research questions.</p>
+            </div>
+          </details>
+
+          <details class="lichen-reason">
+            <summary>
+              <span class="lichen-reason-number" aria-hidden="true">02</span>
+              <span class="lichen-reason-title">All around us, yet still little known</span>
+              <span class="lichen-reason-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="lichen-reason-body">
+              <p>Lichens occur on every continent, from tropical forests to polar regions. Some species inhabit freshwater, marine intertidal zones or even deserts. Certain species have even survived exposure to simulated Martian conditions in lab experiments.</p>
+              <p>They are an integral part of our everyday surroundings, often without us noticing: on trees, rocks, soil, walls, pavements, road signs…</p>
+              <p>Around 20,000 species have been described so far, and new species continue to be discovered every year. Distinct evolutionary lineages can hide behind very similar morphologies (i.e. cryptic diversity).</p>
+              <p>Identifying and naming this diversity remains a vast scientific undertaking, especially in the tropics. Taxonomy (the art of describing and naming lichens) provides the essential foundation for all other studies of these organisms.</p>
+            </div>
+          </details>
+
+          <details class="lichen-reason">
+            <summary>
+              <span class="lichen-reason-number" aria-hidden="true">03</span>
+              <span class="lichen-reason-title">Small organisms with many ecological roles</span>
+              <span class="lichen-reason-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="lichen-reason-body">
+              <p>Lichens contribute to ecosystem functioning in many ways. To give just a few important examples, they help weather rocks and accumulate the organic matter needed for other organisms, including plants, to develop. Within biological soil crusts, they also help stabilise surfaces and limit erosion.</p>
+              <p>Cyanolichens fix atmospheric nitrogen and contribute to nitrogen cycling in ecosystems. Lichens also intercept and temporarily retain water, helping to maintain moisture within their microhabitats. These provide a home for many small organisms, including tardigrades, ants, mites…</p>
+              <p>They are also an essential food source for various animals, such as reindeer, and provide shelter, camouflage for insects and nesting materials for birds. Their ecological importance extends beyond their own diversity.</p>
+            </div>
+          </details>
+
+          <details class="lichen-reason">
+            <summary>
+              <span class="lichen-reason-number" aria-hidden="true">04</span>
+              <span class="lichen-reason-title">Sentinels of air quality</span>
+              <span class="lichen-reason-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="lichen-reason-body">
+              <p>Lichens can alert us to changes in their environment. Some species decline as air pollution increases, while others tolerate or thrive under nitrogen-enriched conditions.</p>
+              <p>Studying their communities allows us to monitor the effects of pollution on living organisms. In Europe, this approach is supported notably by the EN 16413 standard. Developing methods tailored to local species and conditions is a key challenge in extending these approaches to other regions.</p>
+            </div>
+          </details>
+
+          <details class="lichen-reason">
+            <summary>
+              <span class="lichen-reason-number" aria-hidden="true">05</span>
+              <span class="lichen-reason-title">Indicators of habitat conditions and history</span>
+              <span class="lichen-reason-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="lichen-reason-body">
+              <p>Some lichen species have specific ecological requirements. Their presence can provide information about the ecological continuity of a forest, helping us recognise ancient or relatively undisturbed habitats. Tracking their communities and distribution over time also allows us to study the consequences of climate change.</p>
+            </div>
+          </details>
+
+          <details class="lichen-reason">
+            <summary>
+              <span class="lichen-reason-number" aria-hidden="true">06</span>
+              <span class="lichen-reason-title">Chemical diversity to explore</span>
+              <span class="lichen-reason-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="lichen-reason-body">
+              <p>Around 1,000 metabolites (chemical compounds) have been characterised in lichens, most of which are produced only by these organisms. Their chemical potential remains largely unexplored. Understanding the functions and evolution of these substances opens up opportunities in ecology, biotechnology and pharmaceutical research.</p>
+              <p>Lichens have also been part of human history for a very long time: they have provided dyes, including purple dyes used to colour textiles in ancient Rome, and raw materials for perfumery. They were even used for mummification in ancient Egypt.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <details class="lichen-knowledge" open>
+        <summary>
+          <span class="lichen-knowledge-title" id="lichen-knowledge-title">Widespread biodiversity and rare expertise</span>
+          <span class="lichen-reason-icon" aria-hidden="true"></span>
+        </summary>
+        <div class="lichen-knowledge-body">
+          <p>Lichenologists are sometimes as inconspicuous as the organisms they study. In France, lichenology is officially recognised as a rare discipline by the <a href="https://www.enseignementsup-recherche.gouv.fr/fr/cartographie-des-disciplines-rares-46362">Ministry of Higher Education and Research</a>.</p>
+          <p>With so much still to discover about lichens and few specialists to study them, training new generations of lichenologists and sharing what we have learned with people of all backgrounds are essential to preserve centuries of accumulated knowledge and continue to advance our understanding of these organisms.</p>
+          <div class="lichen-knowledge-mission">
+            <p>This is the spirit that led me to create LichenScope: a way to continue my research, build new collaborations and share knowledge.</p>
+          </div>
+        </div>
+      </details>
+        </div>
+      </details>
     </div>
   </section>
 
@@ -191,8 +562,7 @@ h3 { font-family: var(--body); font-weight: 500; }
   <section class="section">
     <div class="container">
       <p class="eyebrow">What LichenScope does</p>
-      <h2>Services &amp; activities</h2>
-      <div class="grid grid--2" style="margin-top:2em">
+            <div class="grid grid--2" style="margin-top:2em">
         <div class="card reveal">
           <span class="num">01</span>
           <h3>Field surveys</h3>
@@ -206,7 +576,7 @@ h3 { font-family: var(--body); font-weight: 500; }
         <div class="card reveal">
           <span class="num">03</span>
           <h3>Collection development &amp; curation</h3>
-          <p>I prepare and curate voucher specimens for deposition in herbaria. </p>
+          <p>I prepare, document and curate voucher specimens for deposition in herbaria and the development of reference collections. I maintain the link between specimens, identifications, collection data and associated DNA sequences.</p>
         </div>
         <div class="card reveal">
           <span class="num">04</span>
@@ -217,7 +587,41 @@ h3 { font-family: var(--body); font-weight: 500; }
     </div>
   </section>
 
-  <!-- GALLERY -->
+  
+
+  <!-- SELECTED PROJECTS -->
+  <section class="section section--dark selected-projects">
+    <div class="container">
+      <p class="eyebrow">Selected projects</p>
+      <h2>Recent &amp; ongoing work</h2>
+      <div class="log" style="margin-top:2em">
+        <div class="log-entry reveal">
+          <span class="log-date">2026 –</span>
+          <div><span class="log-dot"></span>
+            <h4>Lichen inventory of Guadeloupe</h4>
+            <p>I lead a lichen inventory on Guadeloupe's two main islands, Basse-Terre and Grande-Terre. The project includes compiling a species checklist and establishing the first dedicated lichen collection at the GUAD herbarium.
+This work is carried out in collaboration with Meise Botanic Garden and the University of Liège. Funded by the Guadeloupe Botanical Conservatory (CBNIG), <a href="https://www.arb-guadeloupe.fr/">ARBIG</a> and <a href="https://www.guadeloupe.developpement-durable.gouv.fr/">DEAL Guadeloupe</a>.</p>
+          </div>
+        </div>
+        <div class="log-entry reveal">
+          <span class="log-date">2026</span>
+          <div><span class="log-dot"></span>
+            <h4>Saba Estafette Expedition — Critter Quest 2</h4>
+            <p>At the invitation of the founder of the Saba Estafette Expedition, I joined Critter Quest 2 on Saba (Dutch Caribbean) and co-led its lichen expedition. This checklist is conducted in collaboration with Naturalis Biodiversity Center and the Botanic Garden and Botanical Museum Berlin (BGBM), with funding from the <a href="https://www.seaandlearn.org/">Sea &amp; Learn Foundation</a> and the <a href="https://hugodevriesfonds.nl/subsidie-voorwaarden/">Hugo de Vries Fonds</a>.</p>
+          </div>
+        </div>
+        <div class="log-entry reveal">
+          <span class="log-date">2027</span>
+          <div><span class="log-dot"></span>
+            <h4>Lichen inventory in French Guiana (upcoming)</h4>
+            <p>I will lead a three-week field expedition to the <a href="https://www.reserve-trinite.fr/" lang="fr">Réserve naturelle nationale de La Trinité</a> to document lichen diversity and establish a baseline dataset for the reserve.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- GALLERY -->
   <section class="section section--alt" aria-labelledby="lichen-gallery-title">
     <div class="container">
       <h2 id="lichen-gallery-title">From fieldwork to the lab</h2>
@@ -265,39 +669,6 @@ h3 { font-family: var(--body); font-weight: 500; }
     </div>
   </section>
 
-  <!-- SELECTED PROJECTS -->
-  <section class="section section--dark selected-projects">
-    <div class="container">
-      <p class="eyebrow">Selected projects</p>
-      <h2>Recent &amp; ongoing work</h2>
-      <div class="log" style="margin-top:2em">
-        <div class="log-entry reveal">
-          <span class="log-date">2026 –</span>
-          <div><span class="log-dot"></span>
-            <h4>Lichen inventory of Guadeloupe</h4>
-            <p>I lead a lichen inventory on Guadeloupe’s two main islands, Basse-Terre and Grande-Terre. The project includes compiling a species checklist and establishing the first dedicated lichen collection at the GUAD herbarium.
-This work is carried out in collaboration with Meise Botanic Garden and the University of Liège. Funded by the Guadeloupe Botanical Conservatory (CBNIG), <a href="https://www.arb-guadeloupe.fr/">ARBIG</a> and <a href="https://www.guadeloupe.developpement-durable.gouv.fr/">DEAL Guadeloupe</a>.</p>
-          </div>
-        </div>
-        <div class="log-entry reveal">
-          <span class="log-date">2026</span>
-          <div><span class="log-dot"></span>
-            <h4>Saba Estafette Expedition — Critter Quest 2</h4>
-            <p>At the invitation of the founder of the Saba Estafette Expedition, I joined Critter Quest 2 on Saba (Dutch Caribbean) and co-led its lichen expedition. This checklist is conducted in collaboration with Naturalis Biodiversity Center and the Botanic Garden and Botanical Museum Berlin (BGBM), with funding from the <a href="https://www.seaandlearn.org/">Sea &amp; Learn Foundation</a> and the <a href="https://hugodevriesfonds.nl/subsidie-voorwaarden/">Hugo de Vries Fonds</a>.</p>
-          </div>
-        </div>
-        <div class="log-entry reveal">
-          <span class="log-date">2027</span>
-          <div><span class="log-dot"></span>
-            <h4>Lichen inventory in French Guiana (upcoming)</h4>
-            <p>I will lead a three-week field expedition to the <a href="https://www.reserve-trinite.fr/" lang="fr">Réserve naturelle nationale de La Trinité</a> to document lichen diversity and establish a baseline dataset for the reserve.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
 <footer class="site-footer">
   <div class="container footer-row">
     <span>© 2026 Elise Lebreton — LichenScope</span>
@@ -310,5 +681,28 @@ This work is carried out in collaboration with Meise Botanic Garden and the Univ
 </footer>
 
 <script src="assets/js/main.js"></script>
+<script id="why-lichens-matter-script">
+// Native disclosures work without JavaScript; this adds the collective control.
+(function () {
+  const section = document.querySelector('#why-lichens-matter');
+  if (!section) return;
+  const reasons = Array.from(section.querySelectorAll('.lichen-reason, .lichen-knowledge'));
+  const button = section.querySelector('.lichen-reasons-toggle');
+  if (!button || !reasons.length) return;
+  function updateLabel() {
+    const allOpen = reasons.every(function (reason) { return reason.open; });
+    button.textContent = allOpen ? 'Collapse all' : 'Expand all';
+    button.setAttribute('aria-expanded', String(allOpen));
+  }
+  button.hidden = false;
+  button.addEventListener('click', function () {
+    const open = !reasons.every(function (reason) { return reason.open; });
+    reasons.forEach(function (reason) { reason.open = open; });
+    updateLabel();
+  });
+  reasons.forEach(function (reason) { reason.addEventListener('toggle', updateLabel); });
+  updateLabel();
+})();
+</script>
 </body>
 </html>
